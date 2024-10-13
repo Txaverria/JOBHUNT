@@ -78,46 +78,48 @@ El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecno
 
 1. **Clonar el repositorio**:
 
-```bash
-git clone https://github.com/tu_usuario/nombre_del_repositorio.git
-cd nombre_del_repositorio
-```
+   ```bash
+   git clone https://github.com/Txaverria/Proyecto-TWEB-09.git
+   cd Proyecto-TWEB-09
+   ```
 
 2. **Instalar las dependencias**:
 
-Asegúrate de tener Node.js y npm instalados. Luego, ejecuta:
+   Asegúrate de tener **Node.js** y **npm** instalados. Luego, ejecuta:
 
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
 3. **Configuración de la base de datos**:
 
-Crea una base de datos en MongoDB (puedes usar MongoDB Atlas para una base de datos en la nube).
-Actualiza las configuraciones de conexión en el archivo de configuración.
-Ejecutar la aplicación:
+   - Crea una base de datos en **MongoDB** (puedes usar **MongoDB Atlas** para una base de datos en la nube).
+   - Actualiza las configuraciones de conexión en el archivo de configuración.
 
-```bash
-npm start
-```
+   Ejecutar la aplicación:
+
+   ```bash
+   npm start
+   ```
 
 4. **Acceder a la aplicación**:
 
-Abre tu navegador y ve a http://localhost:3000 (o el puerto que hayas configurado).
+   Abre tu navegador y ve a http://localhost:3000 (o el puerto que hayas configurado).
 
-5. **Uso**
+5. **Uso**:
 
-Este proyecto ofrece las siguientes funcionalidades:
+   Este proyecto ofrece las siguientes funcionalidades:
 
-1. **Registro de usuarios**  
-   Los usuarios pueden registrarse y seleccionar su rol: **solicitante de empleo** o **empleador**.
+   - **Registro de usuarios**:  
+     Los usuarios pueden registrarse y seleccionar su rol: **solicitante de empleo** o **empleador**.
 
-2. **Publicar y buscar trabajos**  
-   - Los **empleadores** pueden publicar ofertas de trabajo.
-   - Los **solicitantes** pueden buscar ofertas y postularse a ellas.
+   - **Publicar y buscar trabajos**:
 
-3. **Panel de administración**  
-   Los **administradores** pueden gestionar usuarios y publicaciones de forma eficiente.
+     - Los **empleadores** pueden publicar ofertas de trabajo.
+     - Los **solicitantes** pueden buscar ofertas y postularse a ellas.
+
+   - **Panel de administración**:  
+     Los **administradores** pueden gestionar usuarios y publicaciones de forma eficiente.
 
 ## Integrantes del Proyecto
 
