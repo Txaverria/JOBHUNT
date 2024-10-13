@@ -1,40 +1,123 @@
 # Proyecto TWEB-09
 
 <p align="left">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <br>
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
   <img src="https://img.shields.io/badge/MongoDB%20Atlas-4DB33D?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Atlas" />
   <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white" alt="Mongoose" />
-
-  <br>
-
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
 </p>
 
 Este es el proyecto de programación para el curso **TWEB-09 Programación Web Orientada a Objetos** correspondiente al ciclo 2024 C3.
 
 ## Descripción del Proyecto
 
-El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecnologías de back-end y front-end basadas en principios de programación orientada a objetos (POO).
+El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecnologías de back-end y front-end basadas en principios de programación orientada a objetos (POO). La plataforma conectará a empleadores con solicitantes de empleo, permitiendo la publicación de ofertas de trabajo y la búsqueda de oportunidades laborales.
+
+## Características
+
+- **Roles de Usuario**:
+
+  - **Buscadores de Empleo**: Pueden buscar empleos, crear perfiles y postularse a ofertas de trabajo.
+  - **Empleadores**: Pueden publicar ofertas de empleo, administrar candidatos y actualizar sus perfiles de empresa.
+  - **Administradores**: Pueden gestionar todos los usuarios y moderar las publicaciones de trabajo.
+
+- **Autenticación y Autorización**:
+
+  - Registro de usuarios e inicio de sesión.
+  - Control de acceso basado en roles.
+
+- **Ofertas de Trabajo**:
+
+  - Creación, edición y eliminación de ofertas de empleo.
+  - Información detallada sobre cada oferta: título, descripción, salario, ubicación y tipo de trabajo (tiempo completo, tiempo parcial, etc.).
+
+- **Búsqueda y Filtrado**:
+
+  - Los solicitantes pueden buscar trabajos por título, ubicación, salario y tipo.
+  - Opciones de filtrado para refinar resultados.
+
+- **Proceso de Solicitud de Empleo**:
+
+  - Carga de currículums y cartas de presentación.
+  - Los empleadores pueden revisar y descargar solicitudes.
+
+- **Perfiles de Usuario**:
+
+  - Perfiles para solicitantes con datos básicos y preferencias laborales.
+  - Perfiles para empleadores con detalles de la empresa.
+
+- **Panel de Administración**:
+
+  - Administración de usuarios y publicaciones.
+  - Moderación de ofertas de trabajo.
+
+- **Notificaciones y Alertas** (Deseable):
+  - Alertas para solicitantes sobre nuevas ofertas de trabajo.
+  - Notificaciones para empleadores sobre nuevas solicitudes.
 
 ## Tecnologías Utilizadas
 
-### Back-end:
+- **Front-end**:
 
-- **Node.js**: Utilizado para crear el servidor y manejar la lógica de negocio.
-- **Express.js**: Marco para administrar rutas, solicitudes HTTP y middleware.
-- **MongoDB**: Base de datos NoSQL que almacenará información de usuarios, listados de trabajos y datos de aplicaciones.
-- **MongoDB Atlas**: Implementación basada en la nube de MongoDB para el alojamiento de bases de datos.
-- **Mongoose**: Biblioteca ODM (Object Data Modeling) para MongoDB, usada para definir esquemas y manejar interacciones con la base de datos de manera eficiente.
+  - HTML5
+  - CSS3
+  - JavaScript (POO)
 
-### Front-end:
+- **Back-end**:
+  - Node.js
+  - Express.js
+  - MongoDB
+  - Mongoose
 
-- **HTML5**: Para la estructura del front-end.
-- **CSS3**: Para el estilo básico del front-end.
-- **JavaScript (POO)**: Utilizando programación orientada a objetos, como clases y herencia, para modularidad y escalabilidad del código.
+## Instrucciones de Instalación
+
+1. **Clonar el repositorio**:
+
+```bash
+git clone https://github.com/tu_usuario/nombre_del_repositorio.git
+cd nombre_del_repositorio
+```
+
+2. **Instalar las dependencias**:
+
+Asegúrate de tener Node.js y npm instalados. Luego, ejecuta:
+
+```bash
+npm install
+```
+
+3. **Configuración de la base de datos**:
+
+Crea una base de datos en MongoDB (puedes usar MongoDB Atlas para una base de datos en la nube).
+Actualiza las configuraciones de conexión en el archivo de configuración.
+Ejecutar la aplicación:
+
+```bash
+npm start
+```
+
+4. **Acceder a la aplicación**:
+
+Abre tu navegador y ve a http://localhost:3000 (o el puerto que hayas configurado).
+
+5. **Uso**
+
+Este proyecto ofrece las siguientes funcionalidades:
+
+1. **Registro de usuarios**  
+   Los usuarios pueden registrarse y seleccionar su rol: **solicitante de empleo** o **empleador**.
+
+2. **Publicar y buscar trabajos**  
+   - Los **empleadores** pueden publicar ofertas de trabajo.
+   - Los **solicitantes** pueden buscar ofertas y postularse a ellas.
+
+3. **Panel de administración**  
+   Los **administradores** pueden gestionar usuarios y publicaciones de forma eficiente.
 
 ## Integrantes del Proyecto
 
