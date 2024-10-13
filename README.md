@@ -1,6 +1,6 @@
 # Proyecto TWEB-09
 
-<p align="center">
+<p align="left">
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white" alt="Mongoose" />
 
   <br>
-  
+
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
@@ -38,10 +38,10 @@ El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecno
 
 ## Integrantes del Proyecto
 
-1. Isaac Chavarría
-2. Kevin Liu
-3. Steven Jenkins
-4. Triani Yuan
+- Isaac Chavarría
+- Kevin Liu
+- Steven Jenkins
+- Triani Yuan
 
 ---
 
