@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+}
+
+.navbar {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.103) !important;
+}
+
+/*Card*/
+.card {
+    width: 428px;
+    height: 449px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.card-body {
+    background: #ffffff;
+    box-shadow: 0 40px 20px rgba(0, 0, 0, 0.349) !important; /* Sombra alrededor del card */
+    text-align: center; /* Alinear el texto al centro */
+}
+
+
+
+.form-check-label {
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    padding-left: 10px;
+    padding-bottom: 10px;
+    display: block; /* Hace que el label ocupe toda la línea, mejorando la alineación */
+}
+
+
+h2 {
+    font-size: 26px;
+    text-align: left;
+    font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    text-align: left;
+}
+
+.form-check-input {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #6A6A6A; /* Borde del checkbox */
+}
+
+.form-check-label {
+    font-size: 18px;
+}
+
+.btn-dark {
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    border: 1px solid transparent;  /* Borde transparente */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    width: 247px; /* Ancho del botón */
+    height: 47px; /* Alto del botón */
+}
+
+.btn-dark:hover {
+    background-color: transparent;
+    color: #000 !important;  /* Texto negro */
+    border-color: #000;  /* Cambia el borde a negro */
+}
+
+.mt-3 p {
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Link Iniciar Sesión */
+.custom-link {
+    color: #7E3E16;
+    text-decoration: none; /* Sin subrayado por defecto */
+    position: relative; /* Necesario para pseudo-elemento */
+    transition: all 0.3s ease; /* Suaviza la animación */
+}
+
+.custom-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Ajusta la posición del subrayado */
+    width: 0;
+    height: 1px;
+    background-color: #7E3E16;
+    transition: width 0.3s ease; /* Animación del subrayado */
+}
+
+.custom-link:hover::after {
+    width: 100%; /* Subrayado completo en hover */
+}
+
+
+/*Footer*/
+.footer {
+    position: fixed; /* Posición fija */
+    bottom: 0; /* Al fondo de la página */
+    left: 0; /* A la izquierda */
+    width: 100%; /* Ancho completo */
+    background: white; /* Fondo blanco */
+}
+
+.footer-content {
+    display: flex; /* Usar Flexbox para centrar contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    padding: 10px 0; /* Espaciado superior e inferior */
+}
+
+.footer-logo {
+    width: 58px; /* Ancho de la imagen */
+    height: 53px; /* Alto de la imagen */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.footer-text {
+    font-weight: bold; /* Texto en negrita */
+    margin: 0; /* Eliminar margen del párrafo */
+}

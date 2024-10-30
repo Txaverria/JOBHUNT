@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+}
+
+.navbar {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.103) !important;
+}
+/*Botón Empleos*/
+.btn-custom {
+    color: #000;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-hover {
+    color: #000;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-hover:hover {
+    text-decoration: underline;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.452);
+}
+
+/* Botón Registrarse */
+.btn-outline-dark {
+    border-width: 1px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px 10px; 
+    transition: background-color 0.3s, color 0.3s;
+    color: #000;
+}
+
+.btn-outline-dark:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Botón Iniciar Sesión */
+
+.btn-dark {
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    border: 1px solid transparent;  /* Borde transparente */
+    padding: 5px 10px;  /* Ajuste de padding para consistencia */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Hover para el botón de Iniciar Sesión */
+.btn-dark:hover {
+    background-color: transparent;
+    color: #000 !important;  /* Texto negro */
+    border-color: #000;  /* Cambia el borde a negro */
+}
+
+
+/* Link Únete Ahora */
+.custom-link {
+    color: #7E3E16;
+    text-decoration: none; /* Sin subrayado por defecto */
+    position: relative; /* Necesario para pseudo-elemento */
+    transition: all 0.3s ease; /* Suaviza la animación */
+}
+
+.custom-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Ajusta la posición del subrayado */
+    width: 0;
+    height: 1px;
+    background-color: #7E3E16;
+    transition: width 0.3s ease; /* Animación del subrayado */
+}
+
+.custom-link:hover::after {
+    width: 100%; /* Subrayado completo en hover */
+}
+
+
+
+.header-section {
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.header-section h1 {
+    font-size: 64px;
+    font-weight: 800;
+}
+
+.header-section p {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+/* Footer Styles */
+footer h5 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+footer p {
+    font-size: 18px;
+}
+
+footer ul li {
+    font-size: 18px;
+}
