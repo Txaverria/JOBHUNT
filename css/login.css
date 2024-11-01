@@ -11,15 +11,16 @@ body {
 /*Card*/
 .card {
     width: 428px;
-    height: 449px;
+    height: auto;
     border-radius: 15px;
     overflow: hidden;
     margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.349) !important; /* Sombra alrededor del card */
+
 }
 
 .card-body {
     background: #ffffff;
-    box-shadow: 0 40px 20px rgba(0, 0, 0, 0.349) !important; /* Sombra alrededor del card */
     text-align: center; /* Alinear el texto al centro */
 }
 
@@ -58,6 +59,38 @@ p {
     display: flex;/* Para apilar el checkbox y el label verticalmente */
     align-items: center; /* Centrarlos horizontalmente */
     justify-content: center; /* Centrar verticalmente si hay espacio */
+}
+
+.btn-outline-dark {
+    border-width: 1px;
+    border-color: #d6d6d6 !important;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 5px 10px; 
+    transition: background-color 0.3s, color 0.3s;
+    color: #999999;
+}
+
+.btn-outline-dark:hover {
+    background-color: #888888;
+    color: #fff;
+}
+
+.position-relative {
+    position: relative;
+}
+
+#adminCode {
+    padding-right: 100px; /* Espacio para el botón dentro del input */
+}
+
+.btn-inside-input {
+    position: absolute;
+    right: 0px; /* Ajusta según sea necesario */
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 7px;
 }
 
 

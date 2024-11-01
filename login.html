@@ -20,41 +20,44 @@
         </div>
     </nav>
 
-    <body>
-        <div class="container d-flex align-items-center justify-content-center min-vh-100">
-            <!-- Caja principal (Card) -->
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="pt-3">Iniciemos sesión</h2>
-                    <p class="text-muted">¡Qué bueno verte de vuelta!</p>
-    
-                    <!-- Input para el Correo Electrónico -->
-                    <div class="mb-3">
-                        <input type="email" class="form-control" id="email" placeholder="Correo electrónico" aria-label="Correo electrónico">
-                    </div>
-    
-                    <!-- Input para la Contraseña -->
-                    <div class="mb-3">
-                        <input type="password" class="form-control" id="password" placeholder="Contraseña" aria-label="Contraseña">
-                    </div>
-    
-                    <!-- Checkbox para Administrador -->
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" id="isAdmin">
-                        <label class="form-check-label pt-3" for="isAdmin">Iniciar sesión como Administrador</label>
-                    </div>
-    
-                    <!-- Botón Iniciar Sesión -->
-                    <button class="btn btn-dark" id="loginButton">Iniciar Sesión</button>
-    
-                    <!-- Texto centrado -->
-                    <div class="mt-3">
-                        <p>¿No tienes cuenta? <a href="signin.html" class="text-decoration-none fw-semibold custom-link">Regístrate aquí</a></p>
-                    </div>
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <!-- Caja principal (Card) -->
+        <div class="card">
+            <div class="card-body pt-4">
+                <h2 class="pt-3">Iniciemos sesión</h2>
+                <p class="text-muted">¡Qué bueno verte de vuelta!</p>
+
+                <!-- Input para el Correo Electrónico -->
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico" aria-label="Correo electrónico">
+                </div>
+
+                <!-- Input para la Contraseña -->
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="password" placeholder="Contraseña" aria-label="Contraseña">
+                </div>
+
+                <!-- Checkbox para Administrador -->
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="isAdmin" onchange="toggleAdminCodeInput()">
+                    <label class="form-check-label pt-3" for="isAdmin">Iniciar sesión como Administrador</label>
+                </div>
+
+                <!-- Input para el Código de Administrador (oculto por defecto) -->
+                <div class="mb-3" id="adminCodeInput" style="display: none;">
+                    <input type="text" class="form-control" id="adminCode" placeholder="Código de 8 dígitos" maxlength="8" aria-label="Código de Administrador">
+                </div>
+
+                <!-- Botón Iniciar Sesión -->
+                <button class="btn btn-dark" id="loginButton">Iniciar Sesión</button>
+
+                <!-- Texto centrado -->
+                <div class="mt-3">
+                    <p>¿No tienes cuenta? <a href="signin.html" class="text-decoration-none fw-semibold custom-link">Regístrate aquí</a></p>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -63,3 +66,13 @@
             <p class="footer-text">© 2024 JOB HUNT. All rights reserved. Privacy Policy | Terms of Service</p>
         </div>        
     </footer>
+
+    <script>
+        function toggleAdminCodeInput() {
+            const adminCodeInput = document.getElementById("adminCodeInput");
+            const isAdminChecked = document.getElementById("isAdmin").checked;
+            adminCodeInput.style.display = isAdminChecked ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

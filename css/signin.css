@@ -13,16 +13,16 @@ body {
     width: 428px;
     height: 449px;
     border-radius: 15px;
+    padding-left: 10px;
     overflow: hidden;
     margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.349) !important; /* Sombra alrededor del card */
 }
 
 .card-body {
     background: #ffffff;
-    box-shadow: 0 40px 20px rgba(0, 0, 0, 0.349) !important; /* Sombra alrededor del card */
     text-align: center; /* Alinear el texto al centro */
 }
-
 
 
 .form-check-label {

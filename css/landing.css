@@ -47,6 +47,21 @@ body {
     color: #fff;
 }
 
+.generate-button {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    padding: 5px 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.generate-button:hover {
+    background-color: #000;
+}
+
 /* Botón Iniciar Sesión */
 
 .btn-dark {
