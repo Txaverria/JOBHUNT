@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOBHUNT - Perfil Empleador</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/perfil.css" />
+    <link rel="icon" type="image/png" href="imagenes/logosinletras.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-5">
+      <div class="container">
+        <a class="navbar-brand" href="landing.html">
+          <img src="imagenes/User Logo.png" alt="JOBHUNT Logo" width="50" />
+        </a>
+        <div class="ms-auto">
+          <a href="#" class="navbar-link me-4">Empleos</a>
+          <a href="#" class="navbar-link">Perfil</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container d-flex flex-wrap gap-5 justify-content-center mb-5">
+      <!-- Primera Caja -->
+      <div class="card w-100 p-4" style="max-width: 900px">
+        <div class="row">
+          <!-- Sección izquierda: Foto -->
+          <div class="col-md-3 d-flex align-items-center">
+            <img src="imagenes/company-placeholder.png" alt="Company Picture" class="img-fluid" />
+          </div>
+          <!-- Sección derecha: Contenidos -->
+          <div class="col-md-9">
+            <div class="row align-items-center mb-2">
+              <div class="col-auto me-auto">
+                <p class="fw-bold company-title m-0">Company Title</p>
+              </div>
+              <div class="col-auto">
+                <button class="icon-button">
+                  <i class="bi bi-pencil-square"></i>
+                </button>
+              </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a volutpat orci.</p>
+            <p><strong>Información de Contacto</strong></p>
+            <p>Email: email@example.com</p>
+            <p>Teléfono: +123 456 789</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segunda Caja -->
+      <div class="card w-100 p-4" style="max-width: 900px">
+        <!-- Primera sección -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h4 class="fw-bold m-0">Empleos Publicados</h4>
+          <button class="btn btn-dark">Agregar Puesto</button>
+        </div>
+
+        <!-- Puesto -->
+        <div class="job-listing">
+          <div class="row">
+            <!-- Foto -->
+            <div class="col-md-2 d-flex align-items-center">
+              <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+            </div>
+            <!-- Detalles del puesto -->
+            <div class="col-md-8">
+              <p class="fw-bold job-name">Nombre Puesto</p>
+              <p>
+                Nombre Empresa (Tiempo de Empleo)
+                <br />
+                Ubicación (Modalidad)
+                <br />
+                Área de Interés (Pretención Salarial)
+              </p>
+            </div>
+            <!-- Botones -->
+            <div class="col-md-2 d-flex align-items-start justify-content-end">
+              <button class="icon-button me-3">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button class="icon-button delete-icon">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto ms-auto">Hasta: DD/MM/YYYY</div>
+          </div>
+        </div>
+        <div class="job-listing">
+          <div class="row">
+            <!-- Foto -->
+            <div class="col-md-2 d-flex align-items-center">
+              <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+            </div>
+            <!-- Detalles del puesto -->
+            <div class="col-md-8">
+              <p class="fw-bold job-name">Nombre Puesto</p>
+              <p>
+                Nombre Empresa (Tiempo de Empleo)
+                <br />
+                Ubicación (Modalidad)
+                <br />
+                Área de Interés (Pretención Salarial)
+              </p>
+            </div>
+            <!-- Botones -->
+            <div class="col-md-2 d-flex align-items-start justify-content-end">
+              <button class="icon-button me-3">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button class="icon-button delete-icon">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto ms-auto">Hasta: DD/MM/YYYY</div>
+          </div>
+        </div>
+        <div class="job-listing">
+          <div class="row">
+            <!-- Foto -->
+            <div class="col-md-2 d-flex align-items-center">
+              <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+            </div>
+            <!-- Detalles del puesto -->
+            <div class="col-md-8">
+              <p class="fw-bold job-name">Nombre Puesto</p>
+              <p>
+                Nombre Empresa (Tiempo de Empleo)
+                <br />
+                Ubicación (Modalidad)
+                <br />
+                Área de Interés (Pretención Salarial)
+              </p>
+            </div>
+            <!-- Botones -->
+            <div class="col-md-2 d-flex align-items-start justify-content-end">
+              <button class="icon-button me-3">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button class="icon-button delete-icon">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto ms-auto">Hasta: DD/MM/YYYY</div>
+          </div>
+        </div>
+
+        <!-- Más puestos se pueden agregar aquí -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container pt-5">
+      <div class="row">
+        <div class="col-lg-3">
+          <h5 class="fw-bold">JOBHUNT</h5>
+          <p>
+            Es una plataforma digital que conecta profesionales con empleadores, facilitando la
+            búsqueda de empleo y la creación de redes profesionales a nivel global.
+          </p>
+          <h6 class="fw-bold d-flex align-items-center">
+            Perfil
+            <img src="imagenes/Profile Icon.png" alt="Icono de perfil" class="ms-2" />
+          </h6>
+        </div>
+
+        <div class="col-lg-2">
+          <h5 class="fw-bold">Empleos</h5>
+          <ul class="list-unstyled">
+            <li>➤ Tiempo Completo</li>
+            <li>➤ Tiempo Parcial</li>
+            <li>➤ Presencial</li>
+            <li>➤ Híbrido</li>
+            <li>➤ Remoto</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h5 class="fw-bold">Áreas</h5>
+          <div class="row">
+            <div class="col">
+              <ul class="list-unstyled">
+                <li>➤ Administración</li>
+                <li>➤ Comercio Exterior</li>
+                <li>➤ Comunicación</li>
+                <li>➤ Diseño</li>
+                <li>➤ Educación</li>
+                <li>➤ Finanzas</li>
+                <li>➤ Ingeniería</li>
+                <li>➤ Legal</li>
+                <li>➤ Logística</li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul class="list-unstyled">
+                <li>➤ Marketing y Ventas</li>
+                <li>➤ Medio Ambiente</li>
+                <li>➤ Producción</li>
+                <li>➤ Recursos Humanos</li>
+                <li>➤ Salud</li>
+                <li>➤ Seguridad</li>
+                <li>➤ Servicios Sociales</li>
+                <li>➤ Turismo</li>
+                <li>➤ Tecnología</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 text-center">
+          <img src="imagenes/logosinletras.png" alt="Logo" width="194" height="177" />
+        </div>
+      </div>
+
+      <div class="text-left mt-4 pt-3">
+        <p class="fw-bold">
+          © 2024 JOB HUNT. All rights reserved. Privacy Policy | Terms of Service
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
