@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOBHUNT - Perfil Empleador</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/perfil.css" />
+    <link rel="icon" type="image/png" href="imagenes/logosinletras.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-5">
+      <div class="container">
+        <a class="navbar-brand" href="landing.html">
+          <img src="imagenes/User Logo.png" alt="JOBHUNT Logo" width="50" />
+        </a>
+        <div class="ms-auto">
+          <a href="#" class="navbar-link me-4">Empleos</a>
+          <a href="#" class="navbar-link">Perfil</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container d-flex flex-wrap gap-5 justify-content-center mb-5">
+      <!-- Primera Caja Perfil del Empleador-->
+      <div class="card w-100 p-4" style="max-width: 900px">
+        <div class="row">
+          <!-- Sección izquierda: Foto -->
+          <div class="col-md-3 d-flex align-items-center">
+            <img src="imagenes/company-placeholder.png" alt="Company Picture" class="img-fluid" />
+          </div>
+          <!-- Sección derecha: Contenidos -->
+          <div class="col-md-9">
+            <div class="row align-items-center mb-2">
+              <div class="col-auto me-auto">
+                <p class="fw-bold company-title m-0">Company Title</p>
+              </div>
+              <div class="col-auto">
+                <button class="icon-button" data-bs-toggle="modal" data-bs-target="#editModal">
+                  <i class="bi bi-pencil-square"></i>
+                </button>
+              </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a volutpat orci.</p>
+            <p><strong>Información de Contacto</strong></p>
+            <p>Email: email@example.com</p>
+            <p>Teléfono: +123 456 789</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="editModal"
+        tabindex="-1"
+        aria-labelledby="editModalLabel"
+        aria-hidden="true"
+      >
+        <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+          <button
+            type="button"
+            class="icon-button ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <div class="row">
+            <!-- Left Section: Profile Picture -->
+            <div class="col-md-3 d-flex align-items-center flex-column">
+              <img
+                src="https://via.placeholder.com/200"
+                alt="Placeholder Image"
+                class="img-fluid mb-3"
+                id="profilePreview"
+                width="200"
+                height="200"
+              />
+              <!-- Update Picture Button -->
+              <div class="mb-3">
+                <label
+                  for="fotoPerfil"
+                  class="btn btn-outline-dark d-flex align-items-center justify-content-center"
+                  style="cursor: pointer"
+                >
+                  <span class="me-2">Foto de perfil</span>
+                  <i class="bi bi-camera" style="font-size: 1.5rem"></i>
+                </label>
+                <input type="file" class="form-control d-none" id="fotoPerfil" accept="image/*" />
+              </div>
+            </div>
+            <!-- Right Section: Input Fields -->
+            <div class="col-md-9">
+              <div class="mb-3">
+                <label for="companyTitle" class="form-label fw-bold">Nombre de compañía</label>
+                <input
+                  type="text"
+                  id="companyTitle"
+                  class="form-control"
+                  placeholder="Enter Company Title"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="companyDescripcion" class="form-label">Descripcion</label>
+                <textarea
+                  id="companyDescripcion"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Ingrese una Descripcion"
+                ></textarea>
+              </div>
+              <p><strong>Información de Contacto</strong></p>
+              <div class="mb-3">
+                <label for="companyEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="companyEmail"
+                  class="form-control"
+                  placeholder="email@example.com"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="companyPhone" class="form-label">Teléfono</label>
+                <input
+                  type="text"
+                  id="companyPhone"
+                  class="form-control"
+                  placeholder="+123 456 789"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <button
+              type="button"
+              class="btn btn-dark ms-auto"
+              data-bs-target="#changesSavedModal"
+              data-bs-toggle="modal"
+            >
+              Guardar Cambios
+            </button>
+          </div>
+        </div>
+        <div class="modal-dialog modal-lg"></div>
+      </div>
+
+      <!-- Cambios Guardados Modal -->
+      <div
+        class="modal fade"
+        id="changesSavedModal"
+        aria-hidden="true"
+        aria-labelledby="changesSavedModal"
+        tabindex="-1"
+      >
+        <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+          <div
+            class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2"
+          >
+            <h5 class="m-0"><strong>Cambios Guardados</strong></h5>
+            <div class="d-flex">
+              <button
+                type="button"
+                class="icon-button ms-auto"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row border-section-modal justify-content-center align-items-center mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              fill="#84ef52"
+              class="bi bi-check-circle mb-3"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+              <path
+                d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"
+              />
+            </svg>
+            <h5 class="text-center fw-normal mb-3">Se han guardado los cambios</h5>
+          </div>
+          <div class="d-flex">
+            <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="modal">
+              Hecho
+            </button>
+          </div>
+        </div>
+        <div class="modal-dialog modal-lg"></div>
+      </div>
+
+      <!-- Eliminar listado de empleo Modal -->
+      <div
+        class="modal fade"
+        id="deleteJobListing"
+        aria-hidden="true"
+        aria-labelledby="deleteJobListing"
+        tabindex="-1"
+      >
+        <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+          <div
+            class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2"
+          >
+            <h5 class="m-0"><strong>Eliminar Puesto</strong></h5>
+            <div class="d-flex">
+              <button
+                type="button"
+                class="icon-button ms-auto"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row border-section-modal justify-content-center align-items-center mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              fill="#c8692d"
+              class="bi bi-question-circle mb-3"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+              <path
+                d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"
+              />
+            </svg>
+
+            <h5 class="text-center fw-normal mb-3">¿Seguro que quiere eliminar el puesto?</h5>
+          </div>
+          <div class="d-flex">
+            <button type="button" class="btn btn-outline-dark ms-auto" data-bs-dismiss="modal">
+              Volver
+            </button>
+            <button
+              type="button"
+              class="btn btn-dark ms-3"
+              data-bs-target="#changesSavedModal"
+              data-bs-toggle="modal"
+            >
+              Correcto
+            </button>
+          </div>
+        </div>
+        <div class="modal-dialog modal-lg"></div>
+      </div>
+
+      <!-- Agregar Empleo Modal -->
+      <div
+        class="modal fade"
+        id="addJobListing"
+        tabindex="-1"
+        aria-labelledby="addJobListingLabel"
+        aria-hidden="true"
+      >
+        <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+          <button
+            type="button"
+            class="icon-button ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <div class="row">
+            <!-- Left Section: Profile Picture -->
+            <div class="col-md-3 d-flex align-items-center flex-column">
+              <img
+                src="https://via.placeholder.com/200"
+                alt="Placeholder Image"
+                class="img-fluid mb-3"
+                id="profilePreview"
+                width="200"
+                height="200"
+              />
+              <!-- Update Picture Button -->
+              <div class="mb-3">
+                <label
+                  for="fotoPerfil"
+                  class="btn btn-outline-dark d-flex align-items-center justify-content-center"
+                  style="cursor: pointer"
+                >
+                  <span class="me-2">Foto de perfil</span>
+                  <i class="bi bi-camera" style="font-size: 1.5rem"></i>
+                </label>
+                <input type="file" class="form-control d-none" id="fotoPerfil" accept="image/*" />
+              </div>
+            </div>
+            <!-- Right Section: Input Fields -->
+            <div class="col-md-9">
+              <div class="mb-3">
+                <label for="jobTitle" class="form-label fw-bold">Nombre del Puesto</label>
+                <input
+                  type="text"
+                  id="jobTitle"
+                  class="form-control"
+                  placeholder="Ingrese el Nombre del Puesto"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="companyName" class="form-label fw-bold">Nombre de la Empresa</label>
+                <input
+                  type="text"
+                  id="companyName"
+                  class="form-control"
+                  placeholder="Ingrese el Nombre de la Empresa"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="jobLocation" class="form-label fw-bold">Ubicación</label>
+                <select id="jobLocation" class="form-select">
+                  <option value="" disabled selected>Seleccione la Ubicación</option>
+                  <option value="SJ">San José</option>
+                  <option value="AL">Alajuela</option>
+                  <option value="CA">Cartago</option>
+                  <option value="HE">Heredia</option>
+                  <option value="GU">Guanacaste</option>
+                  <option value="PU">Puntarenas</option>
+                  <option value="LI">Limón</option>
+                </select>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="employmentType" class="form-label fw-bold">Tipo de Empleo</label>
+                  <select id="employmentType" class="form-select">
+                    <option value="" disabled selected>Seleccione el Tipo de Empleo</option>
+                    <option value="full-time">Tiempo Completo</option>
+                    <option value="part-time">Medio Tiempo</option>
+                    <option value="freelance">Freelance</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="jobModality" class="form-label fw-bold">Modalidad</label>
+                  <select id="jobModality" class="form-select">
+                    <option value="" disabled selected>Seleccione la Modalidad</option>
+                    <option value="remote">Remoto</option>
+                    <option value="on-site">Presencial</option>
+                    <option value="hybrid">Híbrido</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="jobArea" class="form-label fw-bold">Área</label>
+                  <select id="jobArea" class="form-select">
+                    <option value="" disabled selected>Seleccione el Área</option>
+                    <option value="Administración">Administración</option>
+                    <option value="Comercio Exterior">Comercio Exterior</option>
+                    <option value="Comunicación">Comunicación</option>
+                    <option value="Diseño">Diseño</option>
+                    <option value="Educación">Educación</option>
+                    <option value="Finanzas">Finanzas</option>
+                    <option value="Ingeniería">Ingeniería</option>
+                    <option value="Legal">Legal</option>
+                    <option value="Logística">Logística</option>
+                    <option value="Marketing y Ventas">Marketing y Ventas</option>
+                    <option value="Medio Ambiente">Medio Ambiente</option>
+                    <option value="Producción">Producción</option>
+                    <option value="Recursos Humanos">Recursos Humanos</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Seguridad">Seguridad</option>
+                    <option value="Servicios Sociales">Servicios Sociales</option>
+                    <option value="Turismo">Turismo</option>
+                    <option value="Tecnología">Tecnología</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="salary" class="form-label fw-bold">Salario</label>
+                  <input
+                    type="number"
+                    id="salary"
+                    class="form-control"
+                    min="1"
+                    placeholder="Ingrese el Salario"
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="expiryDate" class="form-label fw-bold">Fecha de Vencimiento</label>
+                <input type="date" id="expiryDate" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <button
+              type="button"
+              class="btn btn-dark ms-auto"
+              data-bs-target="#changesSavedModal"
+              data-bs-toggle="modal"
+            >
+              Guardar Cambios
+            </button>
+          </div>
+        </div>
+        <div class="modal-dialog modal-lg"></div>
+      </div>
+
+      <!-- Segunda Caja -->
+      <div class="card w-100 p-4" style="max-width: 900px">
+        <!-- Primera sección -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h4 class="fw-bold m-0">Empleos Publicados</h4>
+          <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addJobListing">
+            Agregar Puesto
+          </button>
+        </div>
+
+        <!-- Puesto -->
+        <div class="job-listing">
+          <div class="row">
+            <!-- Foto -->
+            <div class="col-md-2 d-flex align-items-center">
+              <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+            </div>
+            <!-- Detalles del puesto -->
+            <div class="col-md-8">
+              <p class="fw-bold job-name">Nombre Puesto</p>
+              <p>
+                Nombre Empresa (Tiempo de Empleo)
+                <br />
+                Ubicación (Modalidad)
+                <br />
+                Área de Interés (Pretención Salarial)
+              </p>
+            </div>
+            <!-- Botones -->
+            <div class="col-md-2 d-flex align-items-start justify-content-end">
+              <button
+                class="icon-button me-3"
+                data-bs-toggle="modal"
+                data-bs-target="#addJobListing"
+              >
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button
+                class="icon-button delete-icon"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteJobListing"
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto ms-auto">Hasta: DD/MM/YYYY</div>
+          </div>
+        </div>
+        <div class="job-listing">
+          <div class="row">
+            <!-- Foto -->
+            <div class="col-md-2 d-flex align-items-center">
+              <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+            </div>
+            <!-- Detalles del puesto -->
+            <div class="col-md-8">
+              <p class="fw-bold job-name">Nombre Puesto</p>
+              <p>
+                Nombre Empresa (Tiempo de Empleo)
+                <br />
+                Ubicación (Modalidad)
+                <br />
+                Área de Interés (Pretención Salarial)
+              </p>
+            </div>
+            <!-- Botones -->
+            <div class="col-md-2 d-flex align-items-start justify-content-end">
+              <button class="icon-button me-3">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button class="icon-button delete-icon">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto ms-auto">Hasta: DD/MM/YYYY</div>
+          </div>
+        </div>
+        <div class="job-listing">
+          <div class="row">
+            <!-- Foto -->
+            <div class="col-md-2 d-flex align-items-center">
+              <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+            </div>
+            <!-- Detalles del puesto -->
+            <div class="col-md-8">
+              <p class="fw-bold job-name">Nombre Puesto</p>
+              <p>
+                Nombre Empresa (Tiempo de Empleo)
+                <br />
+                Ubicación (Modalidad)
+                <br />
+                Área de Interés (Pretención Salarial)
+              </p>
+            </div>
+            <!-- Botones -->
+            <div class="col-md-2 d-flex align-items-start justify-content-end">
+              <button class="icon-button me-3">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button class="icon-button delete-icon">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto ms-auto">Hasta: DD/MM/YYYY</div>
+          </div>
+        </div>
+
+        <!-- Más puestos se pueden agregar aquí -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container pt-5">
+      <div class="row">
+        <div class="col-lg-3">
+          <h5 class="fw-bold">JOBHUNT</h5>
+          <p>
+            Es una plataforma digital que conecta profesionales con empleadores, facilitando la
+            búsqueda de empleo y la creación de redes profesionales a nivel global.
+          </p>
+          <h6 class="fw-bold d-flex align-items-center">
+            Perfil
+            <img src="imagenes/Profile Icon.png" alt="Icono de perfil" class="ms-2" />
+          </h6>
+        </div>
+
+        <div class="col-lg-2">
+          <h5 class="fw-bold">Empleos</h5>
+          <ul class="list-unstyled">
+            <li>➤ Tiempo Completo</li>
+            <li>➤ Tiempo Parcial</li>
+            <li>➤ Presencial</li>
+            <li>➤ Híbrido</li>
+            <li>➤ Remoto</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h5 class="fw-bold">Áreas</h5>
+          <div class="row">
+            <div class="col">
+              <ul class="list-unstyled">
+                <li>➤ Administración</li>
+                <li>➤ Comercio Exterior</li>
+                <li>➤ Comunicación</li>
+                <li>➤ Diseño</li>
+                <li>➤ Educación</li>
+                <li>➤ Finanzas</li>
+                <li>➤ Ingeniería</li>
+                <li>➤ Legal</li>
+                <li>➤ Logística</li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul class="list-unstyled">
+                <li>➤ Marketing y Ventas</li>
+                <li>➤ Medio Ambiente</li>
+                <li>➤ Producción</li>
+                <li>➤ Recursos Humanos</li>
+                <li>➤ Salud</li>
+                <li>➤ Seguridad</li>
+                <li>➤ Servicios Sociales</li>
+                <li>➤ Turismo</li>
+                <li>➤ Tecnología</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 text-center">
+          <img src="imagenes/logosinletras.png" alt="Logo" width="194" height="177" />
+        </div>
+      </div>
+
+      <div class="text-left mt-4 pt-3">
+        <p class="fw-bold">
+          © 2024 JOB HUNT. All rights reserved. Privacy Policy | Terms of Service
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
