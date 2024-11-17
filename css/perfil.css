@@ -59,17 +59,17 @@ p {
 
 .btn-outline-dark {
   border-width: 1px;
-  border-color: #d6d6d6 !important;
+  border-color: #000000 !important;
   border-radius: 50px;
   font-weight: 400;
   font-size: 18px;
-  padding: 5px 10px;
+  padding: 5px 15px;
   transition: background-color 0.3s, color 0.3s;
-  color: #999999;
+  color: #000000;
 }
 
 .btn-outline-dark:hover {
-  background-color: #888888;
+  background-color: #000000;
   color: #fff;
 }
 
