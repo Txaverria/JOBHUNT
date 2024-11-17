@@ -218,3 +218,7 @@ p {
 .navbar-link:hover {
   color: #7c411b;
 }
+
+.border-section-modal {
+  border-bottom: 3px solid #dee2e6;
+}

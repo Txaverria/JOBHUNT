@@ -73,95 +73,141 @@
         aria-labelledby="editModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <!-- Black "X" Close Button -->
-              <button type="button" class="icon-button" data-bs-dismiss="modal" aria-label="Close">
+        <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+          <button
+            type="button"
+            class="icon-button ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <div class="row">
+            <!-- Left Section: Profile Picture -->
+            <div class="col-md-3 d-flex align-items-center flex-column">
+              <img
+                src="https://via.placeholder.com/200"
+                alt="Placeholder Image"
+                class="img-fluid mb-3"
+                id="profilePreview"
+                width="200"
+                height="200"
+              />
+              <!-- Update Picture Button -->
+              <div class="mb-3">
+                <label
+                  for="fotoPerfil"
+                  class="btn btn-outline-dark d-flex align-items-center justify-content-center"
+                  style="cursor: pointer"
+                >
+                  <span class="me-2">Foto de perfil</span>
+                  <i class="bi bi-camera" style="font-size: 1.5rem"></i>
+                </label>
+                <input type="file" class="form-control d-none" id="fotoPerfil" accept="image/*" />
+              </div>
+            </div>
+            <!-- Right Section: Input Fields -->
+            <div class="col-md-9">
+              <div class="mb-3">
+                <label for="companyTitle" class="form-label fw-bold">Nombre de compañía</label>
+                <input
+                  type="text"
+                  id="companyTitle"
+                  class="form-control"
+                  placeholder="Enter Company Title"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="companyDescripcion" class="form-label">Descripcion</label>
+                <textarea
+                  id="companyDescripcion"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Ingrese una Descripcion"
+                ></textarea>
+              </div>
+              <p><strong>Información de Contacto</strong></p>
+              <div class="mb-3">
+                <label for="companyEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="companyEmail"
+                  class="form-control"
+                  placeholder="email@example.com"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="companyPhone" class="form-label">Teléfono</label>
+                <input
+                  type="text"
+                  id="companyPhone"
+                  class="form-control"
+                  placeholder="+123 456 789"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <button
+              type="button"
+              class="btn btn-dark ms-auto"
+              data-bs-target="#changesSavedModal"
+              data-bs-toggle="modal"
+            >
+              Guardar Cambios
+            </button>
+          </div>
+        </div>
+        <div class="modal-dialog modal-lg"></div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="changesSavedModal"
+        aria-hidden="true"
+        aria-labelledby="changesSavedModal"
+        tabindex="-1"
+      >
+        <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+          <div
+            class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2"
+          >
+            <h5 class="m-0"><strong>Cambios Guardados</strong></h5>
+            <div class="d-flex">
+              <button
+                type="button"
+                class="icon-button ms-auto"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
                 <i class="bi bi-x-lg"></i>
               </button>
             </div>
-            <div class="modal-body">
-              <!-- Modal Structure -->
-              <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
-                <div class="row">
-                  <!-- Left Section: Profile Picture -->
-                  <div class="col-md-3 d-flex align-items-center flex-column">
-                    <img
-                      src="imagenes/company-placeholder.png"
-                      alt="Company Picture"
-                      class="img-fluid mb-3"
-                      id="profilePreview"
-                    />
-                    <!-- Update Picture Button -->
-                    <div class="mb-3">
-                      <label
-                        for="fotoPerfil"
-                        class="btn btn-outline-dark d-flex align-items-center justify-content-center"
-                        style="cursor: pointer"
-                      >
-                        <span class="me-2">Foto de perfil</span>
-                        <i class="bi bi-camera" style="font-size: 1.5rem"></i>
-                      </label>
-                      <input
-                        type="file"
-                        class="form-control d-none"
-                        id="fotoPerfil"
-                        accept="image/*"
-                      />
-                    </div>
-                  </div>
-                  <!-- Right Section: Input Fields -->
-                  <div class="col-md-9">
-                    <div class="row align-items-center mb-2">
-                      <div class="col-auto">
-                        <label for="companyTitle" class="form-label fw-bold">Company Title</label>
-                        <input
-                          type="text"
-                          id="companyTitle"
-                          class="form-control"
-                          placeholder="Enter Company Title"
-                        />
-                      </div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="companyDescription" class="form-label">Description</label>
-                      <textarea
-                        id="companyDescription"
-                        class="form-control"
-                        rows="3"
-                        placeholder="Enter a description"
-                      ></textarea>
-                    </div>
-                    <p><strong>Información de Contacto</strong></p>
-                    <div class="mb-3">
-                      <label for="companyEmail" class="form-label">Email</label>
-                      <input
-                        type="email"
-                        id="companyEmail"
-                        class="form-control"
-                        placeholder="email@example.com"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="companyPhone" class="form-label">Teléfono</label>
-                      <input
-                        type="text"
-                        id="companyPhone"
-                        class="form-control"
-                        placeholder="+123 456 789"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <!-- Save Changes Button -->
-              <button type="button" class="btn btn-dark">Guardar Cambios</button>
-            </div>
+          </div>
+          <div class="row border-section-modal justify-content-center align-items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-check2-circle"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"
+              />
+              <path
+                d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"
+              />
+            </svg>
+          </div>
+          <div class="d-flex">
+            <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="modal">
+              Hecho
+            </button>
           </div>
         </div>
+        <div class="modal-dialog modal-lg"></div>
       </div>
 
       <!-- Segunda Caja -->
