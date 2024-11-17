@@ -161,6 +161,7 @@
         <div class="modal-dialog modal-lg"></div>
       </div>
 
+      <!-- Cambios Guardados Modal -->
       <div
         class="modal fade"
         id="changesSavedModal"
@@ -187,20 +188,17 @@
           <div class="row border-section-modal justify-content-center align-items-center mb-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="250"
-              height="250"
-              fill="#89ed46"
-              class="bi bi-check2-circle mb-3"
+              width="200"
+              height="200"
+              fill="#84ef52"
+              class="bi bi-check-circle mb-3"
               viewBox="0 0 16 16"
             >
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
               <path
-                d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"
-              />
-              <path
-                d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"
+                d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"
               />
             </svg>
-
             <h5 class="text-center fw-normal mb-3">Se han guardado los cambios</h5>
           </div>
           <div class="d-flex">
@@ -212,6 +210,65 @@
         <div class="modal-dialog modal-lg"></div>
       </div>
 
+      <!-- Eliminar listado de empleo Modal -->
+      <div
+        class="modal fade"
+        id="deleteJobListing"
+        aria-hidden="true"
+        aria-labelledby="deleteJobListing"
+        tabindex="-1"
+      >
+        <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+          <div
+            class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2"
+          >
+            <h5 class="m-0"><strong>Eliminar Puesto</strong></h5>
+            <div class="d-flex">
+              <button
+                type="button"
+                class="icon-button ms-auto"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row border-section-modal justify-content-center align-items-center mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              fill="#c8692d"
+              class="bi bi-question-circle mb-3"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+              <path
+                d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"
+              />
+            </svg>
+
+            <h5 class="text-center fw-normal mb-3">¿Seguro que quiere eliminar el puesto?</h5>
+          </div>
+          <div class="d-flex">
+            <button type="button" class="btn btn-outline-dark ms-auto" data-bs-dismiss="modal">
+              Volver
+            </button>
+            <button
+              type="button"
+              class="btn btn-dark ms-3"
+              data-bs-target="#changesSavedModal"
+              data-bs-toggle="modal"
+            >
+              Correcto
+            </button>
+          </div>
+        </div>
+        <div class="modal-dialog modal-lg"></div>
+      </div>
+
+      <!-- Agregar Empleo Modal -->
       <div
         class="modal fade"
         id="addJobListing"
@@ -391,10 +448,18 @@
             </div>
             <!-- Botones -->
             <div class="col-md-2 d-flex align-items-start justify-content-end">
-              <button class="icon-button me-3">
+              <button
+                class="icon-button me-3"
+                data-bs-toggle="modal"
+                data-bs-target="#addJobListing"
+              >
                 <i class="bi bi-pencil-square"></i>
               </button>
-              <button class="icon-button delete-icon">
+              <button
+                class="icon-button delete-icon"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteJobListing"
+              >
                 <i class="bi bi-x-lg"></i>
               </button>
             </div>
