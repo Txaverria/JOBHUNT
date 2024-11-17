@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+}
+
+.navbar {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.103) !important;
+}
+/*Botón Empleos*/
+.btn-custom {
+    color: #000;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-hover {
+    color: #000;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-hover:hover {
+    text-decoration: underline;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.452);
+}
+
+.admin2-section{
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.admin2-section h1{
+    font-size: 40px;
+}
+
+/*Card*/
+.card {
+    width: 428px;
+    height: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.349) !important; /* Sombra alrededor del card */
+}
+
+.card-body {
+    background: #ffffff;
+    text-align: center; /* Alinear el texto al centro */
+}
+
+.form-check-label {
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    padding-left: 10px;
+    padding-bottom: 10px;
+    display: block; /* Hace que el label ocupe toda la línea, mejorando la alineación */
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .icon-button i {
+    font-size: 1.5rem;
+    color: black;
+  }
+  
+  .icon-button:hover i {
+    color: #555; /* Optional: Slight hover effect for black icons */
+  }
+  
+  .delete-icon i {
+    color: red;
+  }
+  
+  .delete-icon:hover i {
+    color: darkred; /* Optional: Hover effect for delete icon */
+  }
+  
+  .company-title {
+    font-size: 1.15rem;
+  }
+
+
+
+
+/* Footer Styles */
+footer h5 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+footer p {
+    font-size: 18px;
+}
+
+footer ul li {
+    font-size: 18px;
+}
