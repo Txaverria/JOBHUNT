@@ -136,6 +136,7 @@ p {
   text-align: center;
 }
 
+
 /* Link Iniciar Sesión */
 .custom-link {
   color: #7e3e16;
@@ -143,6 +144,7 @@ p {
   position: relative; /* Necesario para pseudo-elemento */
   transition: all 0.3s ease; /* Suaviza la animación */
 }
+
 
 .custom-link::after {
   content: "";
@@ -158,6 +160,7 @@ p {
 .custom-link:hover::after {
   width: 100%; /* Subrayado completo en hover */
 }
+
 
 /*Footer*/
 .footer {
