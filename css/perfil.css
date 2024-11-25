@@ -8,6 +8,31 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.103) !important;
 }
 
+
+/*Botón Empleos y Perfil*/
+.btn-custom {
+    color: #000;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-hover {
+    color: #000;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-hover:hover {
+    text-decoration: underline;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.452);
+}
+
 /*Card*/
 .card {
   width: 428px;

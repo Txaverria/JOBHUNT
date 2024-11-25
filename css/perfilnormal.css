@@ -1,0 +1,178 @@
+/* General Styles */
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #ffffff;
+}
+
+.navbar {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.103) !important;
+}
+/*Botón Empleos y Perfil*/
+.btn-custom {
+    color: #000;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-hover {
+    color: #000;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-hover:hover {
+    text-decoration: underline;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.452);
+}
+
+/* Botón Eliminar filtros */
+.btn-outline-dark {
+    border-width: 1px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px 10px; 
+    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+    color: #000;
+}
+
+.btn-outline-dark:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.generate-button {
+    background-color: #ffffff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    padding: 5px 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.generate-button:hover {
+    background-color: #000;
+}
+
+.job-listing {
+    border-bottom: 3px solid #dee2e6;
+    padding-bottom: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.job-listing:last-child {
+    border-bottom: none;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.job-name {
+    color: #7c411b;
+}
+  /* Card */
+
+.card-body img {
+    margin: 0 auto;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra para las tarjetas */
+}
+
+.btn-outline-dark {
+    width: 190px;
+    height: 47px;
+    border-radius: 50px;
+    border: 1px solid #000;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-dark:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.job-listing {
+    border-bottom: 3px solid #dee2e6;
+    padding-bottom: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.job-listing:last-child {
+    border-bottom: none;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+
+  /* Modal */
+.modal-dialog {
+    max-width: 500px;
+}
+
+  /* Botón de Eliminar filtros */
+.delete-icon {
+    margin-right: 10px;
+}
+
+  /* Botón Solicitar */
+.btn-dark {
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+}
+
+.btn-dark:hover {
+    background-color: transparent;
+    color: #000;
+    border-color: #000;
+}
+
+  /* Font Styles */
+h2, h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+}
+
+.font-weight-semibold {
+    font-weight: 600;
+}
+
+.font-weight-bold {
+    font-weight: 700;
+}
+
+  /* Modal Styles */
+.modal-body input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.modal-body .form-control {
+    margin-bottom: 20px;
+}
