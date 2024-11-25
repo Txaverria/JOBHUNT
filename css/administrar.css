@@ -61,6 +61,58 @@ body {
     padding-bottom: 10px;
     display: block; /* Hace que el label ocupe toda la línea, mejorando la alineación */
 }
+/*Card*/
+
+
+/* Estilo para la pestaña activa */
+.nav-pills .nav-link.active {
+    background-color: transparent !important; /* Sin fondo */
+    color: #E49664 !important; /* Color de texto personalizado */
+    border: none; /* Elimina el borde predeterminado */
+}
+
+.nav-pills .nav-link .nav-text {
+    position: relative; /* Necesario para colocar la línea debajo del texto */
+}
+
+.nav-pills .nav-link.active .nav-text::after {
+    content: ''; /* Necesario para crear la línea */
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Ajusta la distancia entre el texto y la línea */
+    width: 100%; /* Asegura que la línea ocupe todo el ancho del texto */
+    height: 2px; /* Grosor de la línea */
+    background-color: #E49664; /* Color de la línea naranja */
+}
+
+/* Estilo para las pestañas no activas */
+.nav-pills .nav-link {
+    background-color: transparent; /* Sin fondo */
+    color: #000; /* Color de texto negro por defecto */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Transición suave */
+}
+
+/* Hover: cambia el color de texto cuando el mouse pasa por encima */
+.nav-pills .nav-link:hover .nav-text {
+    color: #E49664; /* Color naranja al pasar el mouse */
+}
+
+
+.job-listing {
+    border-bottom: 3px solid #dee2e6;
+    padding-bottom: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .job-listing:last-child {
+    border-bottom: none;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+.job-name {
+    color: #7c411b;
+  }
 
 .icon-button {
     background: none;
@@ -85,30 +137,13 @@ body {
   .delete-icon:hover i {
     color: darkred; /* Optional: Hover effect for delete icon */
   }
-  
-  .company-title {
-    font-size: 1.15rem;
-  }
 
 
-/*modal*/
-.btn-dark {
-    background-color: #000;
-    color: #fff;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 18px;
-    border: 1px solid transparent; /* Borde transparente */
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    padding: 10px 20px;
-  }
-  
-  .btn-dark:hover {
-    background-color: transparent;
-    color: #000 !important; /* Texto negro */
-    border-color: #000; /* Cambia el borde a negro */
-  }
-  
+
+
+
+
+
 
 
 /* Footer Styles */

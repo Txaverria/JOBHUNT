@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOBHUNT - Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet" href="css/administrar.css">
+    <link rel="icon" type="image/png" href="imagenes/logosinletras.png">
+</head>
+<body class="container admin2-section">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="landing.html">
+                <img src="imagenes/Admin Logo.png" alt="JOBHUNT Logo" width="50">
+            </a>
+            <div class="ms-auto d-flex align-items-center gap-3">
+                <a href="administrar.html" class="btn btn-custom btn-hover">Administrar</a>
+                <a href="adminPerfil.html" class="btn btn-custom btn-hover">Perfil</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container d-flex flex-wrap gap-5 justify-content-center mb-5">
+        <div class="card w-100 p-4" style="max-width: 943px;">
+            <div class="row">
+                <!-- Sección de Tabs -->
+                <div class="col-md-12">
+                    <nav class="nav nav-pills flex-column flex-sm-row" role="tablist">
+                        <a class="flex-sm-fill text-sm-center nav-link active" id="tab-active" data-bs-toggle="tab" data-bs-target="#content-active" role="tab" aria-controls="content-active" aria-selected="true">
+                            <span class="nav-text" style="font-weight: 700;">Empleos Publicados</span>
+                        </a>
+                        <a class="flex-sm-fill text-sm-center nav-link" id="tab-long" data-bs-toggle="tab" data-bs-target="#content-long" role="tab" aria-controls="content-long" aria-selected="false">
+                            <span class="nav-text" style="font-weight: 700;">Solicitantes</span>
+                        </a>
+                        <a class="flex-sm-fill text-sm-center nav-link" id="tab-link" data-bs-toggle="tab" data-bs-target="#content-link" role="tab" aria-controls="content-link" aria-selected="false">
+                            <span class="nav-text" style="font-weight: 700;">Empleadores</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+    <div class="container d-flex flex-wrap gap-5 justify-content-center mb-5">
+        <div class="card w-100 p-4" style="max-width: 943px; max-height: 1291px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Contenido de las pestañas -->
+                    <div class="tab-content mt-4">
+                        <div class="tab-pane fade show active" id="content-active" role="tabpanel" aria-labelledby="tab-active">
+                            <!-- Segunda Caja -->
+                            <div>
+                                <!-- Primera sección -->
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h4 class="fw-bold m-0">Empleos Publicados</h4>
+                                </div>
+                                <!-- Puesto -->
+                                <div class="job-listing">
+                                <div class="row">
+                                    <!-- Foto -->
+                                    <div class="col-md-2 d-flex align-items-center">
+                                    <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+                                    </div>
+                                    <!-- Detalles del puesto -->
+                                    <div class="col-md-8">
+                                    <p class="fw-bold job-name">Nombre Puesto</p>
+                                    <p>
+                                        Nombre Empresa (Tiempo de Empleo)
+                                        <br />
+                                        Ubicación (Modalidad)
+                                        <br />
+                                        Área de Interés (Pretención Salarial)
+                                    </p>
+                                    </div>
+                                    <!-- Botones -->
+                                    <div class="col-md-2 d-flex align-items-start justify-content-end">
+                                    <button
+                                        class="icon-button delete-icon"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#deleteJobListing"
+                                    >
+                                        <i class="bi bi-x-lg"></i>
+                                    </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto ms-auto">Hasta: DD/MM/YYYY</div>
+                                </div>
+                                </div>
+                                <div class="job-listing">
+                                <div class="row">
+                                    <!-- Foto -->
+                                    <div class="col-md-2 d-flex align-items-center">
+                                    <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+                                    </div>
+                                    <!-- Detalles del puesto -->
+                                    <div class="col-md-8">
+                                    <p class="fw-bold job-name">Nombre Puesto</p>
+                                    <p>
+                                        Nombre Empresa (Tiempo de Empleo)
+                                        <br />
+                                        Ubicación (Modalidad)
+                                        <br />
+                                        Área de Interés (Pretención Salarial)
+                                    </p>
+                                    </div>
+                                    <!-- Botones -->
+                                    <div class="col-md-2 d-flex align-items-start justify-content-end">
+                                    <button class="icon-button delete-icon">
+                                        <i class="bi bi-x-lg"></i>
+                                    </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto ms-auto">Hasta: DD/MM/YYYY</div>
+                                </div>
+                                </div>
+                                <div class="job-listing">
+                                <div class="row">
+                                    <!-- Foto -->
+                                    <div class="col-md-2 d-flex align-items-center">
+                                    <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+                                    </div>
+                                    <!-- Detalles del puesto -->
+                                    <div class="col-md-8">
+                                    <p class="fw-bold job-name">Nombre Puesto</p>
+                                    <p>
+                                        Nombre Empresa (Tiempo de Empleo)
+                                        <br />
+                                        Ubicación (Modalidad)
+                                        <br />
+                                        Área de Interés (Pretención Salarial)
+                                    </p>
+                                    </div>
+                                    <!-- Botones -->
+                                    <div class="col-md-2 d-flex align-items-start justify-content-end">
+                                    <button class="icon-button delete-icon">
+                                        <i class="bi bi-x-lg"></i>
+                                    </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto ms-auto">Hasta: DD/MM/YYYY</div>
+                                </div>
+                                </div>
+
+                                <!-- Más puestos se pueden agregar aquí -->
+                            </div>
+
+                            <!-- Eliminar puesto Modal -->
+                            <div
+                            class="modal fade"
+                            id="changesSavedModal"
+                            aria-hidden="true"
+                            aria-labelledby="changesSavedModal"
+                            tabindex="-1"
+                            >
+                            <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+                                <div
+                                class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2"
+                                >
+                                <h5 class="m-0"><strong>Eliminar puesto</strong></h5>
+                                <div class="d-flex">
+                                    <button
+                                    type="button"
+                                    class="icon-button ms-auto"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                    >
+                                    <i class="bi bi-x-lg"></i>
+                                    </button>
+                                </div>
+                                </div>
+                                <div class="row border-section-modal justify-content-center align-items-center mb-3">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="200"
+                                    height="200"
+                                    fill="#84ef52"
+                                    class="bi bi-check-circle mb-3"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                    <path
+                                    d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"
+                                    />
+                                </svg>
+                                <h5 class="text-center fw-normal mb-3">El puesto ha sido eliminado con éxito.</h5>
+                                </div>
+                                <div class="d-flex">
+                                <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="modal">
+                                    Cerrar
+                                </button>
+                                </div>
+                            </div>
+                            <div class="modal-dialog modal-lg"></div>
+                            </div>
+
+                            <!-- Eliminar listado de empleo Modal -->
+                            <div
+                            class="modal fade"
+                            id="deleteJobListing"
+                            aria-hidden="true"
+                            aria-labelledby="deleteJobListing"
+                            tabindex="-1"
+                            >
+                            <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+                                <div
+                                class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2"
+                                >
+                                <h5 class="m-0"><strong>Eliminar Puesto</strong></h5>
+                                <div class="d-flex">
+                                    <button
+                                    type="button"
+                                    class="icon-button ms-auto"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                    >
+                                    <i class="bi bi-x-lg"></i>
+                                    </button>
+                                </div>
+                                </div>
+                                <div class="row border-section-modal justify-content-center align-items-center mb-3">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="200"
+                                    height="200"
+                                    fill="#c8692d"
+                                    class="bi bi-question-circle mb-3"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                    <path
+                                    d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"
+                                    />
+                                </svg>
+
+                                <h5 class="text-center fw-normal mb-3">¿Seguro que quiere eliminar el puesto?</h5>
+                                </div>
+                                <div class="d-flex">
+                                <button type="button" class="btn btn-outline-dark ms-auto" data-bs-dismiss="modal">
+                                    Volver
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-dark ms-3"
+                                    data-bs-target="#changesSavedModal"
+                                    data-bs-toggle="modal"
+                                >
+                                    Correcto
+                                </button>
+                                </div>
+                            </div>
+                            <div class="modal-dialog modal-lg"></div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="tab-pane fade" id="content-long" role="tabpanel" aria-labelledby="tab-long">
+                            <!-- Segunda Caja -->
+                            <div>
+                                <!-- Primera sección -->
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h4 class="fw-bold m-0">Solicitantes</h4>
+                                </div>
+                                <!-- Puesto -->
+                                <div class="job-listing">
+                                    <div class="row">
+                                        <!-- Foto -->
+                                        <div class="col-md-2 d-flex align-items-center">
+                                        <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+                                        </div>
+                                        <!-- Detalles del puesto -->
+                                        <div class="col-md-8">
+                                        <p class="fw-bold job-name">María Zeledón Rodríguez</p>
+                                        <a><strong>Datos de contacto</strong></a>
+                                        <p>
+                                            Correo electrónico: correoguardadoenLSt@dominio.com
+                                            <br />
+                                            Teléfono: +506 8888 8888
+                                            <br />
+                                            Currículum: MaríaCV.pdf
+                                            <br />
+                                            Preferencias laborales: Marketing y Ventas
+                                        </p>
+                                        </div>
+                                        <!-- Botones -->
+                                        <div class="col-md-2 d-flex align-items-start justify-content-end">
+                                        <button
+                                            class="icon-button delete-icon"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deletesolicitante"
+                                        >
+                                            <i class="bi bi-x-lg"></i>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="job-listing">
+                                    <div class="row">
+                                        <!-- Foto -->
+                                        <div class="col-md-2 d-flex align-items-center">
+                                        <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+                                        </div>
+                                        <!-- Detalles del puesto -->
+                                        <div class="col-md-8">
+                                        <p class="fw-bold job-name">María Zeledón Rodríguez</p>
+                                        <a><strong>Datos de contacto</strong></a>
+                                        <p>
+                                            Correo electrónico: correoguardadoenLSt@dominio.com
+                                            <br />
+                                            Teléfono: +506 8888 8888
+                                            <br />
+                                            Currículum: MaríaCV.pdf
+                                            <br />
+                                            Preferencias laborales: Marketing y Ventas
+                                        </p>
+                                        </div>
+                                        <!-- Botones -->
+                                        <div class="col-md-2 d-flex align-items-start justify-content-end">
+                                        <button
+                                            class="icon-button delete-icon"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deletesolicitante"
+                                        >
+                                            <i class="bi bi-x-lg"></i>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="job-listing">
+                                    <div class="row">
+                                        <!-- Foto -->
+                                        <div class="col-md-2 d-flex align-items-center">
+                                        <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+                                        </div>
+                                        <!-- Detalles del puesto -->
+                                        <div class="col-md-8">
+                                        <p class="fw-bold job-name">María Zeledón Rodríguez</p>
+                                        <a><strong>Datos de contacto</strong></a>
+                                        <p>
+                                            Correo electrónico: correoguardadoenLSt@dominio.com
+                                            <br />
+                                            Teléfono: +506 8888 8888
+                                            <br />
+                                            Currículum: MaríaCV.pdf
+                                            <br />
+                                            Preferencias laborales: Marketing y Ventas
+                                        </p>
+                                        </div>
+                                        <!-- Botones -->
+                                        <div class="col-md-2 d-flex align-items-start justify-content-end">
+                                        <button
+                                            class="icon-button delete-icon"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deletesolicitante"
+                                        >
+                                            <i class="bi bi-x-lg"></i>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Eliminar solicitante Modal -->
+                                    <div
+                                    class="modal fade"
+                                    id="deletesolicitante"
+                                    aria-hidden="true"
+                                    aria-labelledby="deletesolicitante"
+                                    tabindex="-1"
+                                >
+                                    <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+                                        <div class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2">
+                                            <h5 class="m-0"><strong>Eliminar solicitante</strong></h5>
+                                            <div class="d-flex">
+                                                <button
+                                                    type="button"
+                                                    class="icon-button ms-auto"
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Close"
+                                                >
+                                                    <i class="bi bi-x-lg"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row border-section-modal justify-content-center align-items-center mb-3">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="200"
+                                                height="200"
+                                                fill="#c8692d"
+                                                class="bi bi-question-circle mb-3"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                                <path
+                                                    d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"
+                                                />
+                                            </svg>
+
+                                            <h5 class="text-center fw-normal mb-3">¿Seguro que quiere eliminar el solicitante?</h5>
+                                        </div>
+                                        <div class="d-flex">
+                                            <button type="button" class="btn btn-outline-dark ms-auto" data-bs-dismiss="modal">
+                                                Volver
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-dark ms-3"
+                                                data-bs-target="#changesSavedModalSolicitante"
+                                                data-bs-toggle="modal"
+                                            >
+                                                Correcto
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="modal-dialog modal-lg"></div>
+                                </div>
+
+                                <!-- Modal de confirmación de eliminación exitosa -->
+                                <div
+                                    class="modal fade"
+                                    id="changesSavedModalSolicitante"
+                                    aria-hidden="true"
+                                    aria-labelledby="changesSavedModal"
+                                    tabindex="-1"
+                                >
+                                    <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+                                        <div class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2">
+                                            <h5 class="m-0"><strong>Eliminar solicitante</strong></h5>
+                                            <div class="d-flex">
+                                                <button
+                                                    type="button"
+                                                    class="icon-button ms-auto"
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Close"
+                                                >
+                                                    <i class="bi bi-x-lg"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row border-section-modal justify-content-center align-items-center mb-3">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="200"
+                                                height="200"
+                                                fill="#84ef52"
+                                                class="bi bi-check-circle mb-3"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                                <path
+                                                    d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"
+                                                />
+                                            </svg>
+                                            <h5 class="text-center fw-normal mb-3">El solicitante ha sido eliminado con éxito.</h5>
+                                        </div>
+                                        <div class="d-flex">
+                                            <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="modal">
+                                                Cerrar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="modal-dialog modal-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        
+
+
+
+                        <div class="tab-pane fade" id="content-link" role="tabpanel" aria-labelledby="tab-link">
+                            <div>
+                                <!-- Primera sección -->
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h4 class="fw-bold m-0">Empleadores</h4>
+                                </div>
+                                <!-- Puesto -->
+                                <div class="job-listing">
+                                    <div class="row">
+                                        <!-- Foto -->
+                                        <div class="col-md-2 d-flex align-items-center">
+                                        <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+                                        </div>
+                                        <!-- Detalles del puesto -->
+                                        <div class="col-md-8">
+                                        <p class="fw-bold job-name">Amazon Services </p>
+                                        <p>Comercio electrónico, minorista y alojamiento web</p>
+                                        <p>
+                                            <strong>Información de contacto</strong>
+                                            <br />
+                                            Correo electrónico: amazon@dominio.com
+                                            <br />
+                                            Teléfono: +506 2222 2222
+                                        </p>
+                                        </div>
+                                        <!-- Botones -->
+                                        <div class="col-md-2 d-flex align-items-start justify-content-end">
+                                        <button
+                                            class="icon-button delete-icon"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteEmpleador"
+                                        >
+                                            <i class="bi bi-x-lg"></i>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="job-listing">
+                                    <div class="row">
+                                        <!-- Foto -->
+                                        <div class="col-md-2 d-flex align-items-center">
+                                        <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+                                        </div>
+                                        <!-- Detalles del puesto -->
+                                        <div class="col-md-8">
+                                        <p class="fw-bold job-name">Amazon Services </p>
+                                        <p>Comercio electrónico, minorista y alojamiento web</p>
+                                        <p>
+                                            <strong>Información de contacto</strong>
+                                            <br />
+                                            Correo electrónico: amazon@dominio.com
+                                            <br />
+                                            Teléfono: +506 2222 2222
+                                        </p>
+                                        </div>
+                                        <!-- Botones -->
+                                        <div class="col-md-2 d-flex align-items-start justify-content-end">
+                                        <button
+                                            class="icon-button delete-icon"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteEmpleador"
+                                        >
+                                            <i class="bi bi-x-lg"></i>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="job-listing">
+                                    <div class="row">
+                                        <!-- Foto -->
+                                        <div class="col-md-2 d-flex align-items-center">
+                                        <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+                                        </div>
+                                        <!-- Detalles del puesto -->
+                                        <div class="col-md-8">
+                                        <p class="fw-bold job-name">Amazon Services </p>
+                                        <p>Comercio electrónico, minorista y alojamiento web</p>
+                                        <p>
+                                            <strong>Información de contacto</strong>
+                                            <br />
+                                            Correo electrónico: amazon@dominio.com
+                                            <br />
+                                            Teléfono: +506 2222 2222
+                                        </p>
+                                        </div>
+                                        <!-- Botones -->
+                                        <div class="col-md-2 d-flex align-items-start justify-content-end">
+                                        <button
+                                            class="icon-button delete-icon"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteEmpleador"
+                                        >
+                                            <i class="bi bi-x-lg"></i>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Eliminar empleador Modal -->
+                                <div
+                                class="modal fade"
+                                id="deleteEmpleador"
+                                aria-hidden="true"
+                                aria-labelledby="deleteEmpleador"
+                                tabindex="-1"
+                            >
+                                <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+                                    <div class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2">
+                                        <h5 class="m-0"><strong>Eliminar empleador</strong></h5>
+                                        <div class="d-flex">
+                                            <button
+                                                type="button"
+                                                class="icon-button ms-auto"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"
+                                            >
+                                                <i class="bi bi-x-lg"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row border-section-modal justify-content-center align-items-center mb-3">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="200"
+                                            height="200"
+                                            fill="#c8692d"
+                                            class="bi bi-question-circle mb-3"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                            <path
+                                                d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"
+                                            />
+                                        </svg>
+
+                                        <h5 class="text-center fw-normal mb-3">¿Seguro que quiere eliminar el empleador?</h5>
+                                    </div>
+                                    <div class="d-flex">
+                                        <button type="button" class="btn btn-outline-dark ms-auto" data-bs-dismiss="modal">
+                                            Volver
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn btn-dark ms-3"
+                                            data-bs-target="#changesSavedModalEmpleador"
+                                            data-bs-toggle="modal"
+                                        >
+                                            Correcto
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="modal-dialog modal-lg"></div>
+                            </div>
+
+                            <!-- Modal de confirmación de eliminación exitosa -->
+                            <div
+                                class="modal fade"
+                                id="changesSavedModalEmpleador"
+                                aria-hidden="true"
+                                aria-labelledby="changesSavedModal"
+                                tabindex="-1"
+                            >
+                                <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+                                    <div class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2">
+                                        <h5 class="m-0"><strong>Eliminar empleador</strong></h5>
+                                        <div class="d-flex">
+                                            <button
+                                                type="button"
+                                                class="icon-button ms-auto"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"
+                                            >
+                                                <i class="bi bi-x-lg"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row border-section-modal justify-content-center align-items-center mb-3">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="200"
+                                            height="200"
+                                            fill="#84ef52"
+                                            class="bi bi-check-circle mb-3"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                            <path
+                                                d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"
+                                            />
+                                        </svg>
+                                        <h5 class="text-center fw-normal mb-3">El empleador ha sido eliminado con éxito.</h5>
+                                    </div>
+                                    <div class="d-flex">
+                                        <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="modal">
+                                            Cerrar
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="modal-dialog modal-lg"></div>
+                            </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+
+    <!-- Footer -->
+    <footer class="container mt-5">
+        <div class="text-center mt-4 pt-3">
+            <p class="fw-bold">
+                <img src="/imagenes/logosinletras.png" alt="Logo" style="width: 58px; height: 53px;">
+                © 2024 JOB HUNT. All rights reserved. Privacy Policy | Terms of Service
+            </p>
+        </div>
+    </footer>
+
+    <script src="/js/administrar.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -34,171 +34,184 @@
                 <div class="row">
                     <!-- Sección izquierda: Foto -->
                     <div class="col-md-3 d-flex align-items-center">
-                    <img src="imagenes/company-placeholder.png" alt="Company Picture" class="img-fluid" />
+                        <img src="imagenes/company-placeholder.png" alt="Foto admnistrador" class="img-fluid" />
                     </div>
                     <!-- Sección derecha: Contenidos -->
                     <div class="col-md-9">
-                    <div class="row align-items-center mb-2">
-                        <div class="col-auto me-auto">
-                        <p class="fw-bold company-title m-0">Company Title</p>
-                        </div> 
-                        <div class="col-auto">
-                        <button class="icon-button" data-bs-toggle="modal" data-bs-target="#editModal">
-                            <i class="bi bi-pencil-square"></i>
-                        </button>
+                        <div class="row align-items-center mb-2">
+                            <div class="col-auto me-auto">
+                                <p class="fw-bold m-0">Luis Peña</p>
+                            </div>
+                            <div class="col-auto">
+                                <button class="icon-button" data-bs-toggle="modal" data-bs-target="#editModal">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                            </div>
                         </div>
+                        <p><strong>Datos de contacto</strong></p>
+                        <p>Correo electrónico: email@example.com</p>
+                        <p>Teléfono: +123 456 789</p>
+                        <p>Contraseña: ********</p>
+                        <p>Código Administrador: 12345</p>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a volutpat orci.</p>
-                    <p><strong>Información de Contacto</strong></p>
-                    <p>Email: email@example.com</p>
-                    <p>Teléfono: +123 456 789</p>
                 </div>
             </div>
         </div>
 
     <!-- Modal -->
-        <div
-        class="modal fade"
-        id="editModal"
-        tabindex="-1"
-        aria-labelledby="editModalLabel"
-        aria-hidden="true"
+    <div
+    class="modal fade"
+    id="editModal"
+    tabindex="-1"
+    aria-labelledby="editModalLabel"
+    aria-hidden="true"
+    >
+    <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
+    <button
+        type="button"
+        class="icon-button ms-auto"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+    >
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <div class="row">
+        <!-- Left Section: Profile Picture -->
+        <div class="col-md-3 d-flex align-items-center flex-column">
+        <img
+            src="https://via.placeholder.com/200"
+            alt="Luis Peña Álvarez"
+            class="img-fluid mb-3"
+            id="profilePreview"
+            width="200"
+            height="200"
+        />
+        <!-- Update Picture Button -->
+        <div class="mb-3">
+            <label
+            for="fotoPerfil"
+            class="btn btn-outline-dark d-flex align-items-center justify-content-center"
+            style="cursor: pointer"
+            >
+            <span class="me-2">Foto de perfil</span>
+            <i class="bi bi-camera" style="font-size: 1.5rem"></i>
+            </label>
+            <input type="file" class="form-control d-none" id="fotoPerfil" accept="image/*" />
+        </div>
+        </div>
+        <!-- Right Section: Editable Fields -->
+        <div class="col-md-9">
+        <div class="mb-3">
+            <label for="nombre" class="form-label fw-bold">Nombre</label>
+            <input
+            type="text"
+            id="nombre"
+            class="form-control"
+            value="Luis Peña Álvarez"
+            />
+        </div>
+        <p><strong>Datos de contacto</strong></p>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input
+            type="email"
+            id="email"
+            class="form-control"
+            value="ejemplo@dominio.com"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input
+            type="text"
+            id="telefono"
+            class="form-control"
+            value="+506 7777 8888"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="contrasena" class="form-label">Contraseña</label>
+            <input
+            type="password"
+            id="contrasena"
+            class="form-control"
+            value="12345678"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="codigoAdmin" class="form-label">Código de Administrador</label>
+            <input
+            type="text"
+            id="codigoAdmin"
+            class="form-control"
+            value="A74f53"
+            />
+        </div>
+        </div>
+    </div>
+    <div class="d-flex">
+        <button
+        type="button"
+        class="btn btn-dark ms-auto"
+        data-bs-target="#changesSavedModal"
+        data-bs-toggle="modal"
         >
-        <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
-            <button
-            type="button"
-            class="icon-button ms-auto"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-            >
-            <i class="bi bi-x-lg"></i>
-            </button>
-            <div class="row">
-            <!-- Left Section: Profile Picture -->
-            <div class="col-md-3 d-flex align-items-center flex-column">
-                <img
-                src="https://via.placeholder.com/200"
-                alt="Placeholder Image"
-                class="img-fluid mb-3"
-                id="profilePreview"
-                width="200"
-                height="200"
-                />
-                <!-- Update Picture Button -->
-                <div class="mb-3">
-                <label
-                    for="fotoPerfil"
-                    class="btn btn-outline-dark d-flex align-items-center justify-content-center"
-                    style="cursor: pointer"
-                >
-                    <span class="me-2">Foto de perfil</span>
-                    <i class="bi bi-camera" style="font-size: 1.5rem"></i>
-                </label>
-                <input type="file" class="form-control d-none" id="fotoPerfil" accept="image/*" />
-                </div>
-            </div>
-            <!-- Right Section: Input Fields -->
-            <div class="col-md-9">
-                <div class="mb-3">
-                <label for="companyTitle" class="form-label fw-bold">Nombre de compañía</label>
-                <input
-                    type="text"
-                    id="companyTitle"
-                    class="form-control"
-                    placeholder="Enter Company Title"
-                />
-                </div>
-                <div class="mb-3">
-                <label for="companyDescripcion" class="form-label">Descripcion</label>
-                <textarea
-                    id="companyDescripcion"
-                    class="form-control"
-                    rows="3"
-                    placeholder="Ingrese una Descripcion"
-                ></textarea>
-                </div>
-                <p><strong>Información de Contacto</strong></p>
-                <div class="mb-3">
-                <label for="companyEmail" class="form-label">Email</label>
-                <input
-                    type="email"
-                    id="companyEmail"
-                    class="form-control"
-                    placeholder="email@example.com"
-                />
-                </div>
-                <div class="mb-3">
-                <label for="companyPhone" class="form-label">Teléfono</label>
-                <input
-                    type="text"
-                    id="companyPhone"
-                    class="form-control"
-                    placeholder="+123 456 789"
-                />
-                </div>
-            </div>
-            </div>
-            <div class="d-flex">
-            <button
-                type="button"
-                class="btn btn-dark ms-auto"
-                data-bs-target="#changesSavedModal"
-                data-bs-toggle="modal"
-            >
-                Guardar Cambios
-            </button>
-            </div>
-        </div>
-        <div class="modal-dialog modal-lg"></div>
-        </div>
+        Guardar Cambios
+        </button>
+    </div>
+</div>
+<div class="modal-dialog modal-lg"></div>
+</div>
+
+
 
         <!-- Cambios Guardados Modal -->
+      <div
+      class="modal fade"
+      id="changesSavedModal"
+      aria-hidden="true"
+      aria-labelledby="changesSavedModal"
+      tabindex="-1"
+    >
+      <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
         <div
-        class="modal fade"
-        id="changesSavedModal"
-        aria-hidden="true"
-        aria-labelledby="changesSavedModal"
-        tabindex="-1"
+          class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2"
         >
-        <div class="card w-100 p-4 info-empleador" style="max-width: 900px">
-            <div
-            class="d-flex justify-content-between align-items-center border-section-modal py-2 mb-2"
+          <h5 class="m-0"><strong>Cambios Guardados</strong></h5>
+          <div class="d-flex">
+            <button
+              type="button"
+              class="icon-button ms-auto"
+              data-bs-dismiss="modal"
+              aria-label="Close"
             >
-            <h5 class="m-0"><strong>Cambios Guardados</strong></h5>
-            <div class="d-flex">
-                <button
-                type="button"
-                class="icon-button ms-auto"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-                >
-                <i class="bi bi-x-lg"></i>
-                </button>
-            </div>
-            </div>
-            <div class="row border-section-modal justify-content-center align-items-center mb-3">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="200"
-                height="200"
-                fill="#84ef52"
-                class="bi bi-check-circle mb-3"
-                viewBox="0 0 16 16"
-            >
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                <path
-                d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"
-                />
-            </svg>
-            <h5 class="text-center fw-normal mb-3">Se han guardado los cambios</h5>
-            </div>
-            <div class="d-flex">
-            <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="modal">
-                Hecho
+              <i class="bi bi-x-lg"></i>
             </button>
-            </div>
+          </div>
         </div>
-        <div class="modal-dialog modal-lg"></div>
+        <div class="row border-section-modal justify-content-center align-items-center mb-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            fill="#84ef52"
+            class="bi bi-check-circle mb-3"
+            viewBox="0 0 16 16"
+          >
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+            <path
+              d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"
+            />
+          </svg>
+          <h5 class="text-center fw-normal mb-3">Se han guardado los cambios</h5>
+        </div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="modal">
+            Hecho
+          </button>
+        </div>
+      </div>
+      <div class="modal-dialog modal-lg"></div>
     </div>
 
         <div class="row align-items-center">
