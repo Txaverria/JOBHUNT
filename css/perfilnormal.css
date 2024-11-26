@@ -89,23 +89,6 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra para las tarjetas */
 }
 
-.btn-outline-dark {
-    width: 190px;
-    height: 47px;
-    border-radius: 50px;
-    border: 1px solid #000;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 5px 10px;
-    background-color: transparent;
-    color: #000;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-outline-dark:hover {
-    background-color: #000;
-    color: #fff;
-}
 
 .job-listing {
     border-bottom: 3px solid #dee2e6;
@@ -176,3 +159,137 @@ p {
 .modal-body .form-control {
     margin-bottom: 20px;
 }
+
+    /* General styles for the modals */
+    .modal-dialog {
+        max-width: 752px;
+        height: 437px;
+    }
+    
+    .modal-content {
+        border-radius: 10px;
+    }
+    
+    /* Header styles */
+    .modal-header {
+        border-bottom: none;
+    }
+    
+    .modal-title {
+        font-family: 'Inter', sans-serif;
+        font-weight: bold;
+        font-size: 22px;
+    }
+    
+    /* Body styles */
+    .modal-body {
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        color: #000000;
+    }
+    
+    .modal-body p {
+        margin-bottom: 1rem;
+    }
+    
+    hr {
+        border: none;
+        height: 1px;
+        background-color: #999999;
+    }
+    
+    .custom-hr {
+        border: none;
+        height: 1px;
+        background-color: #999999;
+        margin: 15px 0; /* Ajusta el margen si es necesario */
+    }
+    
+    
+    /* Form styles */
+    .form-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        color: #717171;
+    }
+    
+    .form-control {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    
+    .border-dashed {
+        border: 2px dashed #999999;
+        border-radius: 5px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #717171;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        background-color: #f9f9f9;
+    }
+    
+    .border-dashed:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Reduce el espacio entre el título y el texto */
+.modal-body {
+    padding-top: 0px; /* Ajusta el espacio superior si es necesario */
+}
+
+    
+    /* Footer styles */
+    .modal-footer {
+        border-top: none;
+        justify-content: end;
+        gap: 15px;
+    }
+        
+
+    
+    .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    }
+
+    .icon-button i {
+    font-size: 1.5rem;
+    color: black;
+    }
+
+    .icon-button:hover i {
+    color: #555; /* Optional: Slight hover effect for black icons */
+    }
+
+    .delete-icon i {
+    color: red;
+    }
+
+    .delete-icon:hover i {
+    color: darkred; /* Optional: Hover effect for delete icon */
+    }
+
+    .company-title {
+    font-size: 1.15rem;
+    }
+
+    .navbar-link {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    }
+
+    .navbar-link:hover {
+    color: #7c411b;
+    }
+
+    .border-section-modal {
+    border-bottom: 3px solid #dee2e6;
+    }

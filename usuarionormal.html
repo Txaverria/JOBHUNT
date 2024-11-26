@@ -22,6 +22,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <!-- Navbar -->
@@ -260,63 +262,107 @@
       </div>
     </div>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="contactModal"
-      tabindex="-1"
-      aria-labelledby="contactModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="contactModalLabel">Solicitud para Puesto</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+    <!-- Modal: Información de Contacto ------------------------------------------------------------------------------------>
+<!-- Modal 1: Información de Contacto -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width: 800px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Información de Contacto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="userNamePlaceholder">[Nombre del Usuario]</p>
+        <hr class="custom-hr">
+
+        <form id="contactForm">
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese su correo electrónico" />
           </div>
-          <div class="modal-body">
-            <!-- Formulario del modal -->
-            <form>
-              <div class="mb-3">
-                <label for="inputName" class="form-label">Nombre Completo</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="inputName"
-                  placeholder="Ingrese su nombre completo"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="inputEmail" class="form-label">Correo Electrónico</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="inputEmail"
-                  placeholder="Ingrese su correo electrónico"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="inputMessage" class="form-label">Mensaje</label>
-                <textarea
-                  class="form-control"
-                  id="inputMessage"
-                  rows="3"
-                  placeholder="Ingrese su mensaje"
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-dark">Enviar</button>
-            </form>
+          <div class="mb-3">
+            <label for="inputPhone" class="form-label">Número de Teléfono</label>
+            <input type="tel" class="form-control" id="inputPhone" placeholder="Ingrese su número de teléfono" />
           </div>
+          <div class="mb-3">
+            <label for="inputSalary" class="form-label">Expectativa Salarial (en colones)</label>
+            <input type="number" class="form-control" id="inputSalary" placeholder="Ingrese su expectativa salarial" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Currículum</label>
+            <div class="border-dashed">Inserte el PDF o suéltelo aquí</div>
+            <button type="button" class="btn btn-outline-dark mt-2">Subir PDF</button>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-dark" data-bs-target="#reviewModal" data-bs-toggle="modal">Siguiente</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2: Revisión de Solicitud -->
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width: 800px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reviewModalLabel">Revisa tu Solicitud</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>El empleador también recibirá una copia de tu perfil.</p>
+        <hr />
+        <h5>Información de Contacto</h5>
+        <p id="reviewName" class="mt-3"></p>
+        <p><span class="text-muted">Correo Electrónico*</span><br><span id="reviewEmail"></span></p>
+        <p><span class="text-muted">Número de Teléfono*</span><br><span id="reviewPhone"></span></p>
+        <p><span class="text-muted">Expectativa Salarial*</span><br><span id="reviewSalary"></span></p>
+        <hr />
+        <h5>Currículum</h5>
+        <p>Asegúrate de incluir el currículum más actualizado.</p>
+        <div class="d-flex align-items-center mt-2">
+          <span id="cvPreview" class="me-2">Currículum.pdf</span>
+          <button type="button" class="btn btn-outline-dark">Ver</button>
+        </div>
+        <div class="d-flex justify-content-end gap-3 mt-4">
+          <button type="button" class="btn btn-outline-dark" data-bs-target="#contactModal" data-bs-toggle="modal">Volver</button>
+          <button type="button" class="btn btn-dark" data-bs-target="#submittedModal" data-bs-toggle="modal">Enviar Solicitud</button>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Footer -->
+<!-- Modal 3: Solicitud Enviada -->
+<div class="modal fade" id="submittedModal" tabindex="-1" aria-labelledby="submittedModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width: 800px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title ">Solicitud Enviada</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <hr class="custom-hr">
+      <div class="modal-body text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#84ef52" class="bi bi-check-circle mb-3" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+          <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+        </svg>
+        <h5 class="text-center fw-normal mb-3">¡Solicitud Enviada!</h5>
+        <p class="text-center">Tu solicitud ha sido enviada exitosamente al empleador.</p>
+        <hr class="custom-hr">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Hecho</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <!-- Footer ----------------------------------------------------------------------------------------------------------------->
     <footer class="container pt-5 pb-4">
       <div class="row">
         <div class="col-lg-3">
