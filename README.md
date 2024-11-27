@@ -125,7 +125,6 @@ El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecno
 
 - Isaac Chavarría
 - Kevin Liu
-- Steven Jenkins
 - Triani Yuan
 
 ---
