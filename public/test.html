@@ -1,59 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>API Testing</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="test.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        button, input {
-            margin: 5px 0;
-            padding: 10px;
-        }
-        input {
-            width: 300px;
-        }
-        #output {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
-            white-space: pre-wrap;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      button,
+      input {
+        margin: 5px 0;
+        padding: 10px;
+      }
+      input {
+        width: 300px;
+      }
+      #output {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        white-space: pre-wrap;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>API Testing Interface</h1>
 
     <!-- Section for OfertaLaboral -->
     <section>
-        <h2>Job Offers</h2>
-        <button id="createJobOffer">Create Job Offer</button>
-        <button id="getAllJobOffers">Get All Job Offers</button>
-        <button id="getJobOffer">Get Job Offer By ID</button>
-        <input id="jobOfferIdInput" type="text" placeholder="Enter Job Offer ID" />
-        <button id="updateJobOffer">Update Job Offer By ID</button>
-        <button id="deleteJobOffer">Delete Job Offer By ID</button>
+      <h2>Job Offers</h2>
+      <form id="createJobOfferForm">
+        <input id="jobTitulo" type="text" placeholder="Enter Job Title (titulo)" />
+        <input id="jobDescripcion" type="text" placeholder="Enter Job Description (descripcion)" />
+        <input id="jobSalario" type="number" placeholder="Enter Salary (salario)" />
+        <input id="jobUbicacion" type="text" placeholder="Enter Location (ubicacion)" />
+        <input id="jobTipo" type="text" placeholder="Enter Job Type (tipo: full-time/part-time)" />
+        <input
+          id="jobModalidad"
+          type="text"
+          placeholder="Enter Modality (modalidad: hybrid/presential)"
+        />
+        <input
+          id="jobFechaPublicacion"
+          type="date"
+          placeholder="Enter Publication Date (fechaPublicacion)"
+        />
+        <input
+          id="jobFechaExpiracion"
+          type="date"
+          placeholder="Enter Expiration Date (fechaExpiracion)"
+        />
+        <button id="createJobOffer" type="button">Create Job Offer</button>
+      </form>
+      <button id="getAllJobOffers">Get All Job Offers</button>
+      <button id="getJobOffer">Get Job Offer By ID</button>
+      <input id="jobOfferIdInput" type="text" placeholder="Enter Job Offer ID" />
+      <button id="updateJobOffer">Update Job Offer By ID</button>
+      <button id="deleteJobOffer">Delete Job Offer By ID</button>
     </section>
 
     <!-- Section for Usuarios -->
     <section>
-        <h2>Users</h2>
-        <button id="createUser">Create User</button>
-        <button id="getAllUsers">Get All Users</button>
-        <button id="getUser">Get User By ID</button>
-        <input id="userIdInput" type="text" placeholder="Enter User ID" />
-        <button id="updateUser">Update User By ID</button>
-        <button id="deleteUser">Delete User By ID</button>
+      <h2>Users</h2>
+      <button id="createUser">Create User</button>
+      <button id="getAllUsers">Get All Users</button>
+      <button id="getUser">Get User By ID</button>
+      <input id="userIdInput" type="text" placeholder="Enter User ID" />
+      <button id="updateUser">Update User By ID</button>
+      <button id="deleteUser">Delete User By ID</button>
     </section>
 
     <!-- Output Section -->
     <h2>API Response</h2>
     <pre id="output">Click a button to test an API endpoint</pre>
-</body>
+  </body>
 </html>
