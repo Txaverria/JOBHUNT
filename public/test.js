@@ -14,7 +14,6 @@ const handleError = (error) => {
 };
 
 // --- Methods for OfertaLaboral ---
-// Method to create a new job offer
 const createJobOffer = async (jobOffer) => {
   try {
     const response = await axios.post(`${baseURL}/ofertas-laborales`, jobOffer);
@@ -24,7 +23,6 @@ const createJobOffer = async (jobOffer) => {
   }
 };
 
-// Method to get all job offers
 const getAllJobOffers = async () => {
   try {
     const response = await axios.get(`${baseURL}/ofertas-laborales`);
@@ -34,7 +32,6 @@ const getAllJobOffers = async () => {
   }
 };
 
-// Method to get a single job offer by ID
 const getJobOfferById = async (id) => {
   try {
     const response = await axios.get(`${baseURL}/ofertas-laborales/${id}`);
@@ -44,7 +41,6 @@ const getJobOfferById = async (id) => {
   }
 };
 
-// Method to update a job offer by ID
 const updateJobOffer = async (id, updatedData) => {
   try {
     const response = await axios.put(`${baseURL}/ofertas-laborales/${id}`, updatedData);
@@ -54,7 +50,6 @@ const updateJobOffer = async (id, updatedData) => {
   }
 };
 
-// Method to delete a job offer by ID
 const deleteJobOffer = async (id) => {
   try {
     const response = await axios.delete(`${baseURL}/ofertas-laborales/${id}`);
@@ -65,7 +60,6 @@ const deleteJobOffer = async (id) => {
 };
 
 // --- Methods for Usuarios ---
-// Method to create a new user
 const createUser = async (user) => {
   try {
     const response = await axios.post(`${baseURL}/usuarios`, user);
@@ -75,7 +69,6 @@ const createUser = async (user) => {
   }
 };
 
-// Method to get all users
 const getAllUsers = async () => {
   try {
     const response = await axios.get(`${baseURL}/usuarios`);
@@ -85,7 +78,6 @@ const getAllUsers = async () => {
   }
 };
 
-// Method to get a single user by ID
 const getUserById = async (id) => {
   try {
     const response = await axios.get(`${baseURL}/usuarios/${id}`);
@@ -95,7 +87,6 @@ const getUserById = async (id) => {
   }
 };
 
-// Method to update a user by ID
 const updateUser = async (id, updatedData) => {
   try {
     const response = await axios.put(`${baseURL}/usuarios/${id}`, updatedData);
@@ -105,7 +96,6 @@ const updateUser = async (id, updatedData) => {
   }
 };
 
-// Method to delete a user by ID
 const deleteUser = async (id) => {
   try {
     const response = await axios.delete(`${baseURL}/usuarios/${id}`);
@@ -115,7 +105,7 @@ const deleteUser = async (id) => {
   }
 };
 
-// Predefined test data for job offers
+// --- Event Listeners ---
 const testJobOffer = {
   id: 654,
   title: "Software Engineer",
@@ -123,12 +113,10 @@ const testJobOffer = {
   location: "Remote",
 };
 const updatedJobOffer = {
-  id: 654,
   title: "Senior Software Engineer",
 };
-
-// Predefined test data for users
 const testUser = {
+  cedula: 12345,
   nombre: "John Doe",
   email: "john.doe@example.com",
   password: "securepassword",
@@ -138,19 +126,34 @@ const updatedUser = {
   email: "john.doe@example.com",
 };
 
-const testJobOfferID = 654; // Replace with an actual Job Offer ID
-const testUserID = "USER_ID_HERE"; // Replace with an actual User ID
-
-// Attach event listeners for Job Offers
+// Job Offer Event Listeners
 document.getElementById("createJobOffer").addEventListener("click", () => createJobOffer(testJobOffer));
 document.getElementById("getAllJobOffers").addEventListener("click", getAllJobOffers);
-document.getElementById("getJobOffer").addEventListener("click", () => getJobOfferById(testJobOfferID));
-document.getElementById("updateJobOffer").addEventListener("click", () => updateJobOffer(testJobOfferID, updatedJobOffer));
-document.getElementById("deleteJobOffer").addEventListener("click", () => deleteJobOffer(testJobOfferID));
+document.getElementById("getJobOffer").addEventListener("click", () => {
+  const id = document.getElementById("jobOfferIdInput").value;
+  getJobOfferById(id);
+});
+document.getElementById("updateJobOffer").addEventListener("click", () => {
+  const id = document.getElementById("jobOfferIdInput").value;
+  updateJobOffer(id, updatedJobOffer);
+});
+document.getElementById("deleteJobOffer").addEventListener("click", () => {
+  const id = document.getElementById("jobOfferIdInput").value;
+  deleteJobOffer(id);
+});
 
-// Attach event listeners for Users
+// User Event Listeners
 document.getElementById("createUser").addEventListener("click", () => createUser(testUser));
 document.getElementById("getAllUsers").addEventListener("click", getAllUsers);
-document.getElementById("getUser").addEventListener("click", () => getUserById(testUserID));
-document.getElementById("updateUser").addEventListener("click", () => updateUser(testUserID, updatedUser));
-document.getElementById("deleteUser").addEventListener("click", () => deleteUser(testUserID));
+document.getElementById("getUser").addEventListener("click", () => {
+  const id = document.getElementById("userIdInput").value;
+  getUserById(id);
+});
+document.getElementById("updateUser").addEventListener("click", () => {
+  const id = document.getElementById("userIdInput").value;
+  updateUser(id, updatedUser);
+});
+document.getElementById("deleteUser").addEventListener("click", () => {
+  const id = document.getElementById("userIdInput").value;
+  deleteUser(id);
+});
