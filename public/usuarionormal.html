@@ -52,6 +52,7 @@
             <input
               type="text"
               class="form-control mb-4"
+              id="filter-search"
               style="height: 61px; border-radius: 15px; background-color: #f8e5d8; color: #575757"
               placeholder="Buscar..."
             />
@@ -62,10 +63,10 @@
               <div class="input-group">
                 <select
                   class="form-select"
+                  id="filter-location"
                   style="width: 254px; height: 61px; background-color: #f8e5d8; border-radius: 15px"
                 >
                   <option selected>Cualquiera</option>
-                  <option>Ubicación</option>
                   <option>San José</option>
                   <option>Alajuela</option>
                   <option>Heredia</option>
@@ -82,6 +83,7 @@
               <div class="input-group">
                 <select
                   class="form-select"
+                  id="filter-type"
                   style="width: 254px; height: 61px; background-color: #f8e5d8; border-radius: 15px"
                 >
                   <option selected>Cualquiera</option>
@@ -96,6 +98,7 @@
               <div class="input-group">
                 <select
                   class="form-select"
+                  id="filter-modalidad"
                   style="width: 254px; height: 61px; background-color: #f8e5d8; border-radius: 15px"
                 >
                   <option selected>Cualquiera</option>
@@ -111,12 +114,13 @@
               <div class="input-group">
                 <select
                   class="form-select"
+                  id="filter-salary"
                   style="width: 254px; height: 61px; background-color: #f8e5d8; border-radius: 15px"
                 >
                   <option selected>Cualquiera</option>
                   <option>$0-$1500</option>
                   <option>$1500-$2500</option>
-                  <option>$2500-$5000</option>
+                  <option>$2500-$5000+</option>
                 </select>
               </div>
             </div>
@@ -126,6 +130,7 @@
               <div class="input-group">
                 <select
                   class="form-select"
+                  id="filter-area"
                   style="width: 254px; height: 61px; background-color: #f8e5d8; border-radius: 15px"
                 >
                   <option selected>Cualquiera</option>
@@ -266,6 +271,7 @@
                 <button
                   type="button"
                   class="btn btn-dark"
+                  id="review-job-application"
                   data-bs-target="#reviewModal"
                   data-bs-toggle="modal"
                 >
@@ -338,6 +344,7 @@
                 class="btn btn-dark"
                 data-bs-target="#submittedModal"
                 data-bs-toggle="modal"
+                id="send-job-application"
               >
                 Enviar Solicitud
               </button>

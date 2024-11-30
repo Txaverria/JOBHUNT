@@ -42,7 +42,7 @@ router.put("/ofertas-laborales/:id", async (req, res) => {
     const updatedOferta = await OfertaLaboral.findByIdAndUpdate(
       req.params.id,
       req.body,
-      { new: true, runValidators: true }
+      { new: true }
     );
     if (!updatedOferta) {
       return res.status(404).json({ error: "Job offer not found" });
