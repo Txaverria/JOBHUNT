@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const jobListingsContainer = document.getElementById("job-listings-applied");
-  const loggedCedula = sessionStorage.getItem("userCedula");
+  const loggedUserID = "674a3de0fe14e486654c9c94";
+  // const loggedUserID = sessionStorage.getItem("userID");
 
-  if (!loggedCedula) {
+  if (!loggedUserID) {
     console.error("User ID not found in sessionStorage.");
     jobListingsContainer.innerHTML = `
       <p class="text-center text-muted">No se encontró un usuario en la sesión.</p>
@@ -14,9 +15,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Fetch all job offers
     const jobOffers = await getAllJobOffers();
 
-    // Filter job offers where loggedCedula is in solicitantes array
+    // Filter job offers where loggedUserID is in solicitantes array
     const appliedJobOffers = jobOffers.filter((job) =>
-      job.solicitantes?.some((applicant) => applicant.cedula === loggedCedula)
+      job.solicitantes?.some((applicant) => applicant.user_id === loggedUserID)
     );
 
     // Clear the container
@@ -28,6 +29,32 @@ document.addEventListener("DOMContentLoaded", async () => {
         <p class="text-center text-muted">No tienes empleos solicitados.</p>
       `;
       return;
+    }
+
+    try {
+      // Fetch user information using the loggedUserID
+      const user = await getUserById(loggedUserID);
+
+      if (!user) {
+        console.error("User not found.");
+        return;
+      }
+
+      // Populate the modal input fields with the user information
+      document.getElementById("candidateName").value = user.nombre || "";
+      document.getElementById("candidateEmail").value = user.email || "";
+      document.getElementById("candidatePhone").value = user.telefono || "";
+
+      // Update the display spans with the user information
+      document.getElementById("loggedName").textContent = user.nombre || "Nombre no disponible";
+      document.getElementById("loggedEmail").textContent = user.email || "Correo no disponible";
+      document.getElementById("loggedPhone").textContent =
+        user.telefono || "Teléfono no disponible";
+      document.getElementById("loggedCurriculum").textContent = user.curriculum || "No disponible";
+      document.getElementById("loggedPreferences").textContent =
+        user.preferencias || "Preferencias no disponibles";
+    } catch (error) {
+      console.error("Error fetching user information:", error);
     }
 
     // Render each matching job offer
@@ -67,4 +94,32 @@ document.addEventListener("DOMContentLoaded", async () => {
       <p class="text-center text-danger">Error cargando empleos solicitados. Por favor, inténtalo más tarde.</p>
     `;
   }
+
+  // Event listener for saving updated user info
+  document.getElementById("send-updated-user-info").addEventListener("click", async () => {
+    try {
+      // Collect updated information from input fields
+      const updatedData = {
+        nombre: document.getElementById("candidateName").value.trim(),
+        email: document.getElementById("candidateEmail").value.trim(),
+        telefono: document.getElementById("candidatePhone").value.trim(),
+      };
+
+      // Send updated information to the backend
+      const response = await updateUser(loggedUserID, updatedData);
+      console.log("User updated successfully:", response);
+
+      // Update the display spans with the new user information
+      document.getElementById("loggedName").textContent =
+        updatedData.nombre || "Nombre no disponible";
+      document.getElementById("loggedEmail").textContent =
+        updatedData.email || "Correo no disponible";
+      document.getElementById("loggedPhone").textContent =
+        updatedData.telefono || "Teléfono no disponible";
+
+    } catch (error) {
+      console.error("Error updating user information:", error);
+      alert("There was an error updating the user information. Please try again.");
+    }
+  });
 });

@@ -52,7 +52,7 @@
           <div class="col-md-9">
             <div class="row align-items-center mb-2">
               <div class="col-auto me-auto">
-                <p class="fw-bold company-title m-0">María Zeledón Rodríguez</p>
+                <p class="fw-bold company-title m-0" id="loggedName">...</p>
               </div>
               <div class="col-auto">
                 <button class="icon-button" data-bs-toggle="modal" data-bs-target="#editModal">
@@ -61,10 +61,10 @@
               </div>
             </div>
             <p><strong> Datos de contacto </strong></p>
-            <p>Correo electrónico: correoguardadoenLSt@dominio.com</p>
-            <p>Teléfono: +506 8888 8888</p>
-            <p>Currículum: MaríaCV.pdf</p>
-            <p>Preferencias laborales: Marketing y Ventas</p>
+            <p>Correo electrónico: <span id="loggedEmail">...</span></p>
+            <p>Teléfono: <span id="loggedPhone">...</span></p>
+            <p>Currículum: <span id="loggedCurriculum">...</span></p>
+            <p>Preferencias laborales: <span id="loggedPreferences">...</span></p>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@
               <label for="namecandidate" class="form-label fw-bold">Nombre</label>
               <input
                 type="text"
-                id="namecandidate"
+                id="candidateName"
                 class="form-control"
                 placeholder="Candidate Name"
               />
@@ -176,6 +176,7 @@
           <button
             type="button"
             class="btn btn-dark ms-auto"
+            id="send-updated-user-info"
             data-bs-target="#changesSavedModal"
             data-bs-toggle="modal"
           >
