@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Filter job offers where loggedUserID is in solicitantes array
     const appliedJobOffers = jobOffers.filter((job) =>
-      job.solicitantes?.some((applicant) => applicant.user_id === loggedUserID)
+      job.solicitantes?.some((applicant) => applicant.applicantId === loggedUserID)
     );
 
     // Clear the container
