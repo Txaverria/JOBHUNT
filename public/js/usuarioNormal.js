@@ -1,5 +1,14 @@
+let loggedUserID;
+let user;
+
 document.addEventListener("DOMContentLoaded", async () => {
   const jobListingContainer = document.querySelector("#job-listings");
+  loggedUserID = sessionStorage.getItem("userID");
+
+  user = await getUserById(loggedUserID);
+
+  document.getElementById("inputEmail").value = user.email;
+  document.getElementById("inputPhone").value = user.telefono;
 
   let allJobOffers = [];
 
@@ -54,9 +63,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         job.salario || "Pretensión Salarial"
       })</p>
             <button
-              class="btn btn-dark"
-              data-bs-toggle="modal"
-              data-bs-target="#contactModal"
+              class="btn btn-dark requestJob"
               data-id="${job._id}"
             >
               Solicitar
@@ -146,69 +153,121 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 // Variables to store job ID and applicant data
-let selectedJobId = null;
+let selectedJob = null;
 let applicantData = {};
 
 // Event listener for when "Solicitar" is clicked
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("btn-dark") && event.target.dataset.id) {
-    // Save the job ID
-    selectedJobId = event.target.dataset.id;
+// Event listener for when "Solicitar" is clicked
+document.addEventListener("click", async (event) => {
+  if (event.target.classList.contains("requestJob") && event.target.dataset.id) {
+    try {
+      // Fetch the selected job offer
+      selectedJob = await getJobOfferById(event.target.dataset.id);
+
+      // Check if the user has already applied for the job
+      if (selectedJob.solicitantes) {
+        const alreadyApplied = selectedJob.solicitantes.some(
+          (applicant) => applicant.applicantId === loggedUserID
+        );
+
+        if (alreadyApplied) {
+          // Show a SweetAlert if the user has already applied
+          Swal.fire({
+            icon: "warning",
+            title: "Ya Aplicaste",
+            text: "Ya has enviado tu solicitud para este puesto.",
+            showConfirmButton: true,
+          });
+          return; // Exit the function without opening the modal
+        }
+      }
+
+      // Populate modal placeholders with job and user data
+      document.getElementById("userNamePlaceholder").innerText =
+        user.nombre || "Nombre no disponible";
+      document.getElementById("jobNamePlaceholder").innerText =
+        selectedJob.titulo || "Puesto no disponible";
+
+      // Show the contactModal
+      const contactModal = new bootstrap.Modal(document.getElementById("contactModal"));
+      contactModal.show();
+    } catch (error) {
+      console.error("Error fetching job offer:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Hubo un problema al cargar los detalles del puesto.",
+      });
+    }
   }
 });
 
 // Event listener for when "Siguiente" is clicked in the contactModal
-document.getElementById("review-job-application").addEventListener("click", () => {
+document.getElementById("review-job-application").addEventListener("click", async (event) => {
+  // Prevent modal transition
+  event.preventDefault();
+
   // Collect user input
   const inputEmail = document.getElementById("inputEmail").value.trim();
   const inputPhone = document.getElementById("inputPhone").value.trim();
   const inputSalary = document.getElementById("inputSalary").value.trim();
 
-  // Validate input (basic example, you can extend it as needed)
+  // Validate input (check if any field is empty)
   if (!inputEmail || !inputPhone || !inputSalary) {
-    alert("Por favor completa todos los campos.");
-    return;
+    Swal.fire({
+      icon: "warning",
+      title: "Atención",
+      text: "Por favor completa todos los campos antes de continuar.",
+      showConfirmButton: true,
+    });
+    return; // Stop execution if validation fails
   }
 
   // Save data for review
   applicantData = {
+    applicantId: loggedUserID,
     email: inputEmail,
     phone: inputPhone,
-    salary: inputSalary,
+    salaryExpectation: inputSalary,
+    cv: "cv_placeholder.pdf", // Placeholder for CV
   };
 
   // Populate the reviewModal with the applicant's data
-  document.getElementById("reviewEmail").textContent = applicantData.email;
-  document.getElementById("reviewPhone").textContent = applicantData.phone;
-  document.getElementById("reviewSalary").textContent = applicantData.salary;
+  document.getElementById("reviewEmail").textContent = inputEmail;
+  document.getElementById("reviewPhone").textContent = inputPhone;
+  document.getElementById("reviewSalary").textContent = inputSalary;
+
+  // Hide the current modal (contactModal)
+  const contactModal = bootstrap.Modal.getInstance(document.getElementById("contactModal"));
+  contactModal.hide();
+
+  // Show the review modal
+  const reviewModal = new bootstrap.Modal(document.getElementById("reviewModal"));
+  reviewModal.show();
 });
 
 // Event listener for when "Enviar Solicitud" is clicked in the reviewModal
 document.getElementById("send-job-application").addEventListener("click", async () => {
-  if (!selectedJobId) {
+  if (!selectedJob) {
     alert("No se ha seleccionado una oferta de trabajo.");
     return;
   }
 
   try {
     // Ensure applicantData is populated
-    if (!applicantData.email || !applicantData.phone || !applicantData.salary) {
+    if (!applicantData.email || !applicantData.phone || !applicantData.salaryExpectation) {
       throw new Error("Datos del solicitante incompletos.");
     }
 
     // Prepare data for updating the job offer
     const updatedData = {
       $push: {
-        solicitantes: {
-          email: applicantData.email,
-          phone: applicantData.phone,
-          salary: applicantData.salary,
-        },
+        solicitantes: applicantData,
       },
     };
 
     // Update the job offer in the backend
-    const response = await updateJobOffer(selectedJobId, updatedData);
+    const response = await updateJobOffer(selectedJob._id, updatedData);
 
     // Provide feedback to the user
     alert("¡Solicitud enviada con éxito!");
