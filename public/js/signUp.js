@@ -1,29 +1,74 @@
 document.getElementById("registerButton").addEventListener("click", async () => {
-  // Collect input values
-  const nombreCompleto = document.getElementById("nombreCompleto").value.trim();
-  const nombreEmpresa = document.getElementById("nombreEmpresa").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-
-  // Validate inputs
-  if (!nombreCompleto || !nombreEmpresa || !email || !password) {
-    Swal.fire({
-      icon: "warning",
-      title: "Datos incompletos",
-      text: "Por favor, completa todos los campos.",
-    });
-    return;
-  }
-
-  // Create user object
-  const newUser = {
-    nombre: nombreCompleto,
-    empresa: nombreEmpresa,
-    email,
-    password,
-  };
-
   try {
+    // Fetch all users to check for existing emails
+    const allUsers = await getAllUsers();
+    const existingEmails = allUsers.map((user) => user.email);
+
+    // Collect input values based on the form type
+    const isEmployerForm = document.getElementById("nombreCompleto") !== null;
+
+    let newUser;
+    let email;
+
+    if (isEmployerForm) {
+      // Employer form inputs
+      const nombreCompleto = document.getElementById("nombreCompleto").value.trim();
+      const nombreEmpresa = document.getElementById("nombreEmpresa").value.trim();
+      email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Validate inputs
+      if (!nombreCompleto || !nombreEmpresa || !email || !password) {
+        Swal.fire({
+          icon: "warning",
+          title: "Datos incompletos",
+          text: "Por favor, completa todos los campos.",
+        });
+        return;
+      }
+
+      // Construct user object for employer
+      newUser = {
+        nombre: nombreCompleto,
+        empresa: nombreEmpresa,
+        email,
+        password,
+      };
+    } else {
+      // User form inputs
+      const nombre = document.getElementById("nombre").value.trim();
+      const apellidos = document.getElementById("apellidos").value.trim();
+      email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Validate inputs
+      if (!nombre || !apellidos || !email || !password) {
+        Swal.fire({
+          icon: "warning",
+          title: "Datos incompletos",
+          text: "Por favor, completa todos los campos.",
+        });
+        return;
+      }
+
+      // Construct user object for individual user
+      newUser = {
+        nombre: `${nombre} ${apellidos}`,
+        email,
+        password,
+      };
+    }
+
+    // Check if email already exists
+    if (existingEmails.includes(email)) {
+      Swal.fire({
+        icon: "error",
+        title: "Correo ya registrado",
+        html: "<p class='text-center'>El correo electrónico ya está en uso. <br> Por favor utiliza otro.</p>",
+      });
+      return;
+    }
+
     // Attempt to create the user
     await createUser(newUser);
 
@@ -39,7 +84,7 @@ document.getElementById("registerButton").addEventListener("click", async () => 
       allowEscapeKey: false,
     });
 
-    // Redirect to signin.html after 3 seconds
+    // Redirect to login.html after 2 seconds
     setTimeout(() => {
       window.location.href = "login.html";
     }, 2000);
