@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const jobListingsContainer = document.getElementById("job-listings-applied");
-  const loggedUserID = "674a3de0fe14e486654c9c94";
-  // const loggedUserID = sessionStorage.getItem("userID");
+  const loggedUserID = sessionStorage.getItem("userID");
 
   if (!loggedUserID) {
     console.error("User ID not found in sessionStorage.");
@@ -28,16 +27,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       jobListingsContainer.innerHTML = `
         <p class="text-center text-muted">No tienes empleos solicitados.</p>
       `;
-      return;
     }
 
     try {
       // Fetch user information using the loggedUserID
       const user = await getUserById(loggedUserID);
+      console.log("hello");
 
       if (!user) {
         console.error("User not found.");
-        return;
+      } else {
+        console.log(user);
       }
 
       // Populate the modal input fields with the user information
@@ -116,7 +116,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         updatedData.email || "Correo no disponible";
       document.getElementById("loggedPhone").textContent =
         updatedData.telefono || "Teléfono no disponible";
-
     } catch (error) {
       console.error("Error updating user information:", error);
       alert("There was an error updating the user information. Please try again.");
