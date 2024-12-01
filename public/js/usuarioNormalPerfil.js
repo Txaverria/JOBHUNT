@@ -51,8 +51,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.getElementById("loggedPhone").textContent =
         user.telefono || "Teléfono no disponible";
       document.getElementById("loggedCurriculum").textContent = user.curriculum || "No disponible";
-      document.getElementById("loggedPreferences").textContent =
-        user.preferencias || "Preferencias no disponibles";
     } catch (error) {
       console.error("Error fetching user information:", error);
     }
@@ -103,6 +101,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         nombre: document.getElementById("candidateName").value.trim(),
         email: document.getElementById("candidateEmail").value.trim(),
         telefono: document.getElementById("candidatePhone").value.trim(),
+        contrasena: document.getElementById("candidatePassword").value.trim(),
       };
 
       // Send updated information to the backend

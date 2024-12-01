@@ -33,6 +33,7 @@ document.getElementById("registerButton").addEventListener("click", async () => 
         empresa: nombreEmpresa,
         email,
         contrasena,
+        tipo: "empresa",
       };
     } else {
       // User form inputs
@@ -40,6 +41,7 @@ document.getElementById("registerButton").addEventListener("click", async () => 
       const apellidos = document.getElementById("apellidos").value.trim();
       email = document.getElementById("email").value.trim();
       const contrasena = document.getElementById("password").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
 
       // Validate inputs
       if (!nombre || !apellidos || !email || !contrasena) {
@@ -56,6 +58,8 @@ document.getElementById("registerButton").addEventListener("click", async () => 
         nombre: `${nombre} ${apellidos}`,
         email,
         contrasena,
+        telefono,
+        tipo: "usuario",
       };
     }
 

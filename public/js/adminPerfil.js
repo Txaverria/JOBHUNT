@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         nombre: document.getElementById("nombre").value.trim(),
         email: document.getElementById("email").value.trim(),
         telefono: document.getElementById("telefono").value.trim(),
-        password: document.getElementById("password").value.trim(),
+        contrasena: document.getElementById("password").value.trim(),
       };
 
       // Send updated information to the backend

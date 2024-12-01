@@ -82,7 +82,8 @@ document.getElementById("createUser").addEventListener("click", async () => {
     cedula: parseInt(document.getElementById("userCedula")?.value || 0),
     nombre: "Default User", // Add fields dynamically if needed
     email: "user@example.com", // Placeholder for testing
-    password: "password123",
+    tipo: "usuario",
+    contrasena: "123",
   };
 
   try {

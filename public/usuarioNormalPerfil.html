@@ -65,7 +65,6 @@
             <p>Correo electrónico: <span id="loggedEmail">...</span></p>
             <p>Teléfono: <span id="loggedPhone">...</span></p>
             <p>Currículum: <span id="loggedCurriculum">...</span></p>
-            <p>Preferencias laborales: <span id="loggedPreferences">...</span></p>
           </div>
         </div>
       </div>
@@ -147,6 +146,15 @@
               />
             </div>
             <div class="mb-3">
+              <label for="candidatePassword" class="form-label">Contraseña:</label>
+              <input
+                type="password"
+                id="candidatePassword"
+                class="form-control"
+                placeholder="***********"
+              />
+            </div>
+            <div class="mb-3">
               <label
                 for="Curriculum"
                 class="btn btn-outline-dark d-flex align-items-center justify-content-center"
@@ -160,15 +168,6 @@
                 class="form-control d-none"
                 id="Curriculum"
                 accept=".pdf,.doc,.docx"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="Preferences" class="form-label">Preferencias laborales:</label>
-              <input
-                type="text"
-                id="Preferences"
-                class="form-control"
-                placeholder="Marketing y Ventas"
               />
             </div>
           </div>
