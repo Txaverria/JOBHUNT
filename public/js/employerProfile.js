@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         descripcion: document.getElementById("companyDescripcion").value.trim(),
         email: document.getElementById("companyEmail").value.trim(),
         telefono: document.getElementById("companyPhone").value.trim(),
+        contrasena: document.getElementById("companyPassword").value.trim(),
       };
 
       // Send updated information to the backend

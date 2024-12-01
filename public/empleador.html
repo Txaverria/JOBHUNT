@@ -22,6 +22,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/services/backendServices.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -50,18 +53,20 @@
           <div class="col-md-9">
             <div class="row align-items-center mb-2">
               <div class="col-auto me-auto">
-                <p class="fw-bold company-title m-0">Company Title</p>
-              </div> 
+                <p class="fw-bold company-title m-0" id="loggedCompanyTitle">Company Title</p>
+              </div>
               <div class="col-auto">
                 <button class="icon-button" data-bs-toggle="modal" data-bs-target="#editModal">
                   <i class="bi bi-pencil-square"></i>
                 </button>
               </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a volutpat orci.</p>
+            <p id="loggedDescription">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a volutpat orci.
+            </p>
             <p><strong>Información de Contacto</strong></p>
-            <p>Email: email@example.com</p>
-            <p>Teléfono: +123 456 789</p>
+            <p>Email: <span id="loggedEmail">email@example.com</span></p>
+            <p>Teléfono: <span id="loggedPhone">+123 456 789</span></p>
           </div>
         </div>
       </div>
@@ -146,6 +151,15 @@
                   placeholder="+123 456 789"
                 />
               </div>
+              <div class="mb-3">
+                <label for="companyPassword" class="form-label">Contraseña</label>
+                <input
+                  type="text"
+                  id="companyPassword"
+                  class="form-control"
+                  placeholder="*******"
+                />
+              </div>
             </div>
           </div>
           <div class="d-flex">
@@ -154,6 +168,7 @@
               class="btn btn-dark ms-auto"
               data-bs-target="#changesSavedModal"
               data-bs-toggle="modal"
+              id="guardarNuevoPerfil"
             >
               Guardar Cambios
             </button>
@@ -608,6 +623,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/logout.js"></script>
+    <script src="js/employerProfile.js"></script>
   </body>
 </html>
