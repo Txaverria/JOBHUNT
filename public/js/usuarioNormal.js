@@ -120,6 +120,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderJobOffers(filteredJobs);
   };
 
+  const deleteFilters = () => {
+    document.querySelector("#filter-search").value = "";
+    document.querySelector("#filter-location").value = "Cualquiera";
+    document.querySelector("#filter-type").value = "Cualquiera";
+    document.querySelector("#filter-modalidad").value = "Cualquiera";
+    document.querySelector("#filter-salary").value = "Cualquiera";
+    document.querySelector("#filter-area").value = "Cualquiera";
+
+    filterJobs();
+  };
+
   // Attach event listeners to filters
   document.querySelector("#filter-search").addEventListener("input", filterJobs);
   document.querySelector("#filter-location").addEventListener("change", filterJobs);
@@ -127,6 +138,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.querySelector("#filter-modalidad").addEventListener("change", filterJobs);
   document.querySelector("#filter-salary").addEventListener("change", filterJobs);
   document.querySelector("#filter-area").addEventListener("change", filterJobs);
+
+  document.querySelector("#delete-filters").addEventListener("click", deleteFilters);
 
   // Fetch and render jobs on load
   await fetchAndRenderJobs();
