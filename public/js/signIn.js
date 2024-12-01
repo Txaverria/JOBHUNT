@@ -2,10 +2,10 @@ document.getElementById("loginButton").addEventListener("click", async () => {
   try {
     // Retrieve input values
     const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+    const contrasena = document.getElementById("password").value.trim();
 
     // Validate inputs
-    if (!email || !password) {
+    if (!email || !contrasena) {
       Swal.fire({
         icon: "warning",
         title: "Datos incompletos",
@@ -18,7 +18,7 @@ document.getElementById("loginButton").addEventListener("click", async () => {
     const allUsers = await getAllUsers();
 
     // Check if the user exists and validate credentials
-    const user = allUsers.find((u) => u.email === email && u.password === password);
+    const user = allUsers.find((u) => u.email === email && u.contrasena === contrasena);
 
     if (!user) {
       Swal.fire({

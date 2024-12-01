@@ -15,10 +15,10 @@ document.getElementById("registerButton").addEventListener("click", async () => 
       const nombreCompleto = document.getElementById("nombreCompleto").value.trim();
       const nombreEmpresa = document.getElementById("nombreEmpresa").value.trim();
       email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
+      const contrasena = document.getElementById("password").value.trim();
 
       // Validate inputs
-      if (!nombreCompleto || !nombreEmpresa || !email || !password) {
+      if (!nombreCompleto || !nombreEmpresa || !email || !contrasena) {
         Swal.fire({
           icon: "warning",
           title: "Datos incompletos",
@@ -32,17 +32,17 @@ document.getElementById("registerButton").addEventListener("click", async () => 
         nombre: nombreCompleto,
         empresa: nombreEmpresa,
         email,
-        password,
+        contrasena,
       };
     } else {
       // User form inputs
       const nombre = document.getElementById("nombre").value.trim();
       const apellidos = document.getElementById("apellidos").value.trim();
       email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
+      const contrasena = document.getElementById("password").value.trim();
 
       // Validate inputs
-      if (!nombre || !apellidos || !email || !password) {
+      if (!nombre || !apellidos || !email || !contrasena) {
         Swal.fire({
           icon: "warning",
           title: "Datos incompletos",
@@ -55,7 +55,7 @@ document.getElementById("registerButton").addEventListener("click", async () => 
       newUser = {
         nombre: `${nombre} ${apellidos}`,
         email,
-        password,
+        contrasena,
       };
     }
 
