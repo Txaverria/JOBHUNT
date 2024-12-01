@@ -70,7 +70,6 @@
               <p><strong>Datos de contacto</strong></p>
               <p>Correo electrónico: <span id="loggedEmail">email@example.com</span></p>
               <p>Teléfono: <span id="loggedPhone">+123 456 789</span></p>
-              <p>Contraseña: <span id="loggedPassword">********</span></p>
             </div>
           </div>
         </div>
@@ -133,8 +132,8 @@
                 <input type="text" id="telefono" class="form-control" placeholder="+506 7777 8888" />
               </div>
               <div class="mb-3">
-                <label for="contrasena" class="form-label">Contraseña</label>
-                <input type="password" id="contrasena" class="form-control" placeholder="12345678" />
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" id="password" class="form-control" placeholder="12345678" />
               </div>
             </div>
           </div>
@@ -144,6 +143,7 @@
               class="btn btn-dark ms-auto"
               data-bs-target="#changesSavedModal"
               data-bs-toggle="modal"
+              id="sendAdminChanges"
             >
               Guardar Cambios
             </button>
