@@ -32,12 +32,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.querySelector("#sendAdminChanges").addEventListener("click", async () => {
     try {
       // Collect updated information from input fields
+
+      const newContrasena = document.getElementById("password").value.trim();
+
       const updatedData = {
         nombre: document.getElementById("nombre").value.trim(),
         email: document.getElementById("email").value.trim(),
         telefono: document.getElementById("telefono").value.trim(),
-        contrasena: document.getElementById("password").value.trim(),
       };
+
+      if (newContrasena) {
+        updatedData.contrasena = newContrasena;
+      }
 
       // Send updated information to the backend
       const response = await updateUser(loggedUserID, updatedData);
