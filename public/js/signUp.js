@@ -17,6 +17,7 @@ document.getElementById("registerButton").addEventListener("click", async () => 
       email = document.getElementById("email").value.trim();
       const contrasena = document.getElementById("password").value.trim();
       const telefono = document.getElementById("phone").value.trim();
+      const descripcion = document.getElementById("descripcion").value.trim();
 
       // Validate inputs
       if (!nombreCompleto || !nombreEmpresa || !email || !contrasena) {
@@ -35,6 +36,7 @@ document.getElementById("registerButton").addEventListener("click", async () => 
         email,
         contrasena,
         telefono,
+        descripcion,
         tipo: "empresa",
       };
     } else {
