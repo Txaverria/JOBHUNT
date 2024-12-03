@@ -2,6 +2,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   const jobListingsContainer = document.getElementById("job-listings-applied");
   const loggedUserID = sessionStorage.getItem("userID");
 
+  const fileInput = document.getElementById("Curriculum");
+  const fileNameDisplay = document.getElementById("fileNameDisplay");
+
+  fileInput.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const fileName = file.name; // Get the file name
+      fileNameDisplay.textContent = fileName; // Display the file name
+      fileNameDisplay.style.display = "block"; // Make the div visible
+    }
+  });
+
   document.getElementById("candidatePhone").addEventListener("input", function (e) {
     let input = e.target.value;
 
@@ -68,12 +80,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.getElementById("candidateEmail").value = user.email || "";
       document.getElementById("candidatePhone").value = user.telefono || "";
 
+      if (user.cv) {
+        fileNameDisplay.textContent = user.cv;
+        fileNameDisplay.style.display = "block";
+      }
+
       // Update the display spans with the user information
       document.getElementById("loggedName").textContent = user.nombre || "Nombre no disponible";
       document.getElementById("loggedEmail").textContent = user.email || "Correo no disponible";
       document.getElementById("loggedPhone").textContent =
         user.telefono || "Teléfono no disponible";
-      document.getElementById("loggedCurriculum").textContent = user.curriculum || "No disponible";
+      document.getElementById("loggedCurriculum").textContent = user.cv || "No disponible";
     } catch (error) {
       console.error("Error fetching user information:", error);
     }
@@ -126,6 +143,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         nombre: document.getElementById("candidateName").value.trim(),
         email: document.getElementById("candidateEmail").value.trim(),
         telefono: document.getElementById("candidatePhone").value.trim(),
+        cv: document.getElementById("fileNameDisplay").textContent.trim(),
       };
 
       contrasena = document.getElementById("candidatePassword").value.trim();
@@ -145,6 +163,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         updatedData.email || "Correo no disponible";
       document.getElementById("loggedPhone").textContent =
         updatedData.telefono || "Teléfono no disponible";
+      document.getElementById("loggedCurriculum").textContent = updatedData.cv || "No disponible";
+      document.getElementById("fileNameDisplay").textContent = updatedData.cv || "CV no disponible";
     } catch (error) {
       console.error("Error updating user information:", error);
       alert("There was an error updating the user information. Please try again.");
