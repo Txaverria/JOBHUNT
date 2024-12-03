@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           <div class="row">
             <div class="col-auto ms-auto">Hasta: <span id="jobExpiration">${
               job.fechaExpiracion
-                ? new Date(job.fechaExpiracion).toLocaleDateString()
+                ? new Date(job.fechaExpiracion).toLocaleDateString("es-ES", { timeZone: "UTC" })
                 : "DD/MM/YYYY"
             }</span></div>
           </div>
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("jobArea").value = jobToEdit.area || "";
         document.getElementById("salary").value = jobToEdit.salario || "";
         document.getElementById("expiryDate").value = jobToEdit.fechaExpiracion
-          ? new Date(jobToEdit.fechaExpiracion).toISOString().split("T")[0]
+          ? new Date(job.fechaExpiracion).toLocaleDateString("es-ES", { timeZone: "UTC" })
           : "";
       }
       if (event.target.closest("#deleteJobButton")) {
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         tipo: document.getElementById("newEmploymentType").value,
         modalidad: document.getElementById("newJobModality").value,
         area: document.getElementById("newJobArea").value,
-        salario: parseFloat(document.getElementById("newSalary").value),
+        salario: String(document.getElementById("newSalary").value),
         fechaExpiracion: document.getElementById("newExpireDate").value
           ? new Date(document.getElementById("newExpireDate").value).toISOString()
           : null,

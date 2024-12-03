@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>
         <div class="row">
           <div class="col-auto ms-auto text-muted">Hasta: ${
-            job.fechaExpiracion ? new Date(job.fechaExpiracion).toLocaleDateString() : "DD/MM/YYYY"
+            job.fechaExpiracion ? new Date(job.fechaExpiracion).toLocaleDateString("es-ES", { timeZone: "UTC" }) : "DD/MM/YYYY"
           }</div>
         </div>
       `;
