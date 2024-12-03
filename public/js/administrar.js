@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           <div class="col-md-8">
             <p class="fw-bold job-name">${job.titulo || "Nombre Puesto"}</p>
             <p>
-              ${job.company || "Nombre Empresa"} (${job.tipo || "Tiempo de Empleo"})
+              ${job.empresa || "Nombre Empresa"} (${job.tipo || "Tiempo de Empleo"})
               <br />
               ${job.ubicacion || "Ubicación"} (${job.modalidad || "Modalidad"})
               <br />
@@ -50,10 +50,41 @@ document.addEventListener("DOMContentLoaded", async () => {
           </div>
         </div>
         <div class="row">
-          <div class="col-auto ms-auto">Hasta: ${
-            job.fechaExpiracion ? new Date(job.fechaExpiracion).toLocaleDateString("es-ES", { timeZone: "UTC" }) : "DD/MM/YYYY"
-          }</div>
+          <div class="col-auto ms-auto">
+            Hasta: ${
+              job.fechaExpiracion
+                ? new Date(job.fechaExpiracion).toLocaleDateString("es-ES", { timeZone: "UTC" })
+                : "DD/MM/YYYY"
+            }
+          </div>
         </div>
+        ${
+          job.solicitantes && job.solicitantes.length > 0
+            ? `
+              <div class="row mt-3">
+                <div class="col-12">
+                  <p class="fw-bold">Solicitantes:</p>
+                  <ul>
+                    ${job.solicitantes
+                      .map(
+                        (applicant) => `
+                          <li>
+                            <p>
+                              <strong>Email:</strong> ${applicant.email}<br />
+                              <strong>Teléfono:</strong> ${applicant.phone}<br />
+                              <strong>Pretensión Salarial:</strong> ${applicant.salaryExpectation}<br />
+                              <strong>Currículum:</strong> <span style='text-decoration: underline;'>${applicant.cv}</span>
+                            </p>
+                          </li>
+                        `
+                      )
+                      .join("")}
+                  </ul>
+                </div>
+              </div>
+            `
+            : ""
+        }
       `;
       jobListingsContainer.appendChild(jobElement);
     });
