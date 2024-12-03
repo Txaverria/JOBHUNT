@@ -116,6 +116,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const salaryValue = document.querySelector("#filter-salary").value;
     const areaValue = document.querySelector("#filter-area").value;
 
+    console.log(salaryValue);
+
     const filteredJobs = allJobOffers.filter((job) => {
       // Apply search filter
       const matchesSearch = !searchValue || job.titulo?.toLowerCase().includes(searchValue);
@@ -133,9 +135,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       const matchesSalary =
         salaryValue === "Cualquiera" ||
         (job.salario &&
-          ((salaryValue === "$0-$1500" && job.salario <= 1500) ||
-            (salaryValue === "$1500-$2500" && job.salario > 1500 && job.salario <= 2500) ||
-            (salaryValue === "$2500-$5000+" && job.salario > 2500)));
+          (() => {
+            // Extract the numeric value from the salary string
+            const numericSalary = parseInt(job.salario.replace(/[₡.,]/g, ""), 10);
+
+            // Perform comparisons based on salaryValue
+            return (
+              (salaryValue === "minimo" && numericSalary <= 750000) ||
+              (salaryValue === "medio" && numericSalary > 750000 && numericSalary <= 1500000) ||
+              (salaryValue === "mayor" && numericSalary > 1500000)
+            );
+          })());
 
       // Apply area filter
       const matchesArea = areaValue === "Cualquiera" || job.area === areaValue;
