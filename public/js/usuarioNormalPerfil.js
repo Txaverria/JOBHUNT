@@ -103,8 +103,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         nombre: document.getElementById("candidateName").value.trim(),
         email: document.getElementById("candidateEmail").value.trim(),
         telefono: document.getElementById("candidatePhone").value.trim(),
-        contrasena: document.getElementById("candidatePassword").value.trim(),
       };
+
+      contrasena = document.getElementById("candidatePassword").value.trim();
+
+      if (contrasena) {
+        updatedData.contrasena = contrasena;
+      }
 
       // Send updated information to the backend
       const response = await updateUser(loggedUserID, updatedData);
