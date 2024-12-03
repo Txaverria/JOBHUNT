@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         tipo: document.getElementById("employmentType").value,
         modalidad: document.getElementById("jobModality").value,
         area: document.getElementById("jobArea").value,
-        salario: parseFloat(document.getElementById("salary").value),
+        salario: String(document.getElementById("salary").value),
         fechaExpiracion: document.getElementById("expiryDate").value
           ? new Date(document.getElementById("expiryDate").value).toISOString()
           : null,
@@ -262,4 +262,38 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.error("Error fetching employer or job information:", error);
   }
+
+  document.getElementById("newSalary").addEventListener("input", function (e) {
+    let value = e.target.value;
+
+    // Eliminar todo excepto números
+    value = value.replace(/[^0-9]/g, "");
+
+    // Insertar puntos cada tres dígitos
+    value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    // Prepend the ₡ symbol
+    if (value.length > 0) {
+      value = "₡" + value;
+    }
+
+    e.target.value = value;
+  });
+
+  document.getElementById("salary").addEventListener("input", function (e) {
+    let value = e.target.value;
+
+    // Eliminar todo excepto números
+    value = value.replace(/[^0-9]/g, "");
+
+    // Insertar puntos cada tres dígitos
+    value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    // Prepend the ₡ symbol
+    if (value.length > 0) {
+      value = "₡" + value;
+    }
+
+    e.target.value = value;
+  });
 });
