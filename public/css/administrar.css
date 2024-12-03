@@ -1,161 +1,155 @@
 /* General Styles */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
 }
 
 .navbar {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.103) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.103) !important;
 }
 /*Botón Empleos*/
 .btn-custom {
-    color: #000;
-    border: none;
-    background: transparent;
-    font-weight: 600;
-    font-size: 18px;
-    transition: all 0.3s;
+  color: #000;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s;
 }
 
 .btn-hover {
-    color: #000;
-    border: none;
-    background: transparent;
-    font-weight: 600;
-    font-size: 18px;
-    transition: all 0.3s;
+  color: #000;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s;
 }
 
 .btn-hover:hover {
-    text-decoration: underline;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.452);
+  text-decoration: underline;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.452);
 }
 
-.admin2-section{
-    padding-top: 120px;
-    padding-bottom: 60px;
+.admin2-section {
+  padding-top: 120px;
+  padding-bottom: 60px;
 }
 
-.admin2-section h1{
-    font-size: 40px;
+.admin2-section h1 {
+  font-size: 40px;
 }
 
 /*Card*/
 .card {
-    width: 428px;
-    height: auto;
-    border-radius: 15px;
-    overflow: hidden;
-    margin: 0 auto;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.349) !important; /* Sombra alrededor del card */
+  width: 428px;
+  height: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.349) !important; /* Sombra alrededor del card */
 }
 
 .card-body {
-    background: #ffffff;
-    text-align: center; /* Alinear el texto al centro */
+  background: #ffffff;
+  text-align: center; /* Alinear el texto al centro */
 }
 
 .form-check-label {
-    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
-    padding-left: 10px;
-    padding-bottom: 10px;
-    display: block; /* Hace que el label ocupe toda la línea, mejorando la alineación */
+  text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+  padding-left: 10px;
+  padding-bottom: 10px;
+  display: block; /* Hace que el label ocupe toda la línea, mejorando la alineación */
 }
 /*Card*/
 
-
 /* Estilo para la pestaña activa */
 .nav-pills .nav-link.active {
-    background-color: transparent !important; /* Sin fondo */
-    color: #E49664 !important; /* Color de texto personalizado */
-    border: none; /* Elimina el borde predeterminado */
+  background-color: transparent !important; /* Sin fondo */
+  color: #e49664 !important; /* Color de texto personalizado */
+  border: none; /* Elimina el borde predeterminado */
 }
 
 .nav-pills .nav-link .nav-text {
-    position: relative; /* Necesario para colocar la línea debajo del texto */
+  position: relative; /* Necesario para colocar la línea debajo del texto */
 }
 
 .nav-pills .nav-link.active .nav-text::after {
-    content: ''; /* Necesario para crear la línea */
-    position: absolute;
-    left: 0;
-    bottom: -3px; /* Ajusta la distancia entre el texto y la línea */
-    width: 100%; /* Asegura que la línea ocupe todo el ancho del texto */
-    height: 2px; /* Grosor de la línea */
-    background-color: #E49664; /* Color de la línea naranja */
+  content: ""; /* Necesario para crear la línea */
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Ajusta la distancia entre el texto y la línea */
+  width: 100%; /* Asegura que la línea ocupe todo el ancho del texto */
+  height: 2px; /* Grosor de la línea */
+  background-color: #e49664; /* Color de la línea naranja */
 }
 
 /* Estilo para las pestañas no activas */
 .nav-pills .nav-link {
-    background-color: transparent; /* Sin fondo */
-    color: #000; /* Color de texto negro por defecto */
-    transition: color 0.3s ease, border-bottom 0.3s ease; /* Transición suave */
+  background-color: transparent; /* Sin fondo */
+  color: #000; /* Color de texto negro por defecto */
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Transición suave */
 }
 
 /* Hover: cambia el color de texto cuando el mouse pasa por encima */
 .nav-pills .nav-link:hover .nav-text {
-    color: #E49664; /* Color naranja al pasar el mouse */
+  color: #e49664; /* Color naranja al pasar el mouse */
 }
 
+.nav-text {
+  cursor: pointer;
+}
 
 .job-listing {
-    border-bottom: 3px solid #dee2e6;
-    padding-bottom: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-  
-  .job-listing:last-child {
-    border-bottom: none;
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-  }
+  border-bottom: 3px solid #dee2e6;
+  padding-bottom: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.job-listing:last-child {
+  border-bottom: none;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
 
 .job-name {
-    color: #7c411b;
-  }
+  color: #7c411b;
+}
 
 .icon-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-  
-  .icon-button i {
-    font-size: 1.5rem;
-    color: black;
-  }
-  
-  .icon-button:hover i {
-    color: #555; /* Optional: Slight hover effect for black icons */
-  }
-  
-  .delete-icon i {
-    color: red;
-  }
-  
-  .delete-icon:hover i {
-    color: darkred; /* Optional: Hover effect for delete icon */
-  }
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
 
+.icon-button i {
+  font-size: 1.5rem;
+  color: black;
+}
 
+.icon-button:hover i {
+  color: #555; /* Optional: Slight hover effect for black icons */
+}
 
+.delete-icon i {
+  color: red;
+}
 
-
-
-
-
+.delete-icon:hover i {
+  color: darkred; /* Optional: Hover effect for delete icon */
+}
 
 /* Footer Styles */
 footer h5 {
-    font-size: 18px;
-    font-weight: 600;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 footer p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 footer ul li {
-    font-size: 18px;
+  font-size: 18px;
 }
