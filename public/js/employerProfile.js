@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                   job.ubicacion || "Ubicación"
                 }</span> (<span id="jobModality">${job.modalidad || "Modalidad"}</span>)
                 <br />
-                <span id="jobArea">${job.area || "Área de Interés"}</span> (<span id="jobSalary"
+                <span id="jobArea">${job.area || "Área de Interés"}</span> (Expectativa salarial: <span id="jobSalary"
                   >${job.salario || "Pretensión Salarial"}</span
                 >)
               </p>
