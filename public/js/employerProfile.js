@@ -166,6 +166,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Gather data from input fields
       const newJobData = {
         id_empresa: loggedUserID,
+        empresa: employer.empresa,
         titulo: document.getElementById("newJobTitle").value.trim(),
         ubicacion: document.getElementById("newJobLocation").value,
         tipo: document.getElementById("newEmploymentType").value,
