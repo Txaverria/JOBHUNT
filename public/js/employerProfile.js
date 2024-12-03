@@ -147,8 +147,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         nombre: document.getElementById("companyAdminName").value.trim(),
         email: document.getElementById("companyEmail").value.trim(),
         telefono: document.getElementById("companyPhone").value.trim(),
-        password: document.getElementById("companyPassword").value.trim(),
       };
+
+      if (document.getElementById("companyPassword").value.trim()) {
+        updateData.contrasena = document.getElementById("companyPassword").value.trim();
+      }
 
       try {
         await updateUser(loggedUserID, updateData);
