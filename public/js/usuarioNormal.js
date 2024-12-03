@@ -178,6 +178,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   await fetchAndRenderJobs();
 });
 
+document.getElementById("inputSalary").addEventListener("input", function (e) {
+  let value = e.target.value;
+
+  // Eliminar todo excepto números
+  value = value.replace(/[^0-9]/g, "");
+
+  // Insertar puntos cada tres dígitos
+  value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+  // Prepend the ₡ symbol
+  if (value.length > 0) {
+    value = "₡" + value;
+  }
+
+  e.target.value = value;
+});
+
 // Variables to store job ID and applicant data
 let selectedJob = null;
 let applicantData = {};
