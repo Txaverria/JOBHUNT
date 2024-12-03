@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.log("Admin updated successfully:", response);
     } catch (error) {
       console.error("Error updating admin information:", error);
-      alert("There was an error updating the admin information. Please try again.");
     }
   });
 });

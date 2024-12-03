@@ -249,7 +249,7 @@ document.getElementById("review-job-application").addEventListener("click", asyn
 // Event listener for when "Enviar Solicitud" is clicked in the reviewModal
 document.getElementById("send-job-application").addEventListener("click", async () => {
   if (!selectedJob) {
-    alert("No se ha seleccionado una oferta de trabajo.");
+
     return;
   }
 
@@ -269,8 +269,6 @@ document.getElementById("send-job-application").addEventListener("click", async 
     // Update the job offer in the backend
     const response = await updateJobOffer(selectedJob._id, updatedData);
 
-    // Provide feedback to the user
-    alert("¡Solicitud enviada con éxito!");
     console.log("Updated Job Offer:", response);
   } catch (error) {
     console.error("Error al enviar la solicitud:", error);
