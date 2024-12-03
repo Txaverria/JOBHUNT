@@ -73,7 +73,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                   job.ubicacion || "Ubicación"
                 }</span> (<span id="jobModality">${job.modalidad || "Modalidad"}</span>)
                 <br />
-                <span id="jobArea">${job.area || "Área de Interés"}</span> (Expectativa salarial: <span id="jobSalary"
+                <span id="jobArea">${
+                  job.area || "Área de Interés"
+                }</span> (Expectativa salarial: <span id="jobSalary"
                   >${job.salario || "Pretensión Salarial"}</span
                 >)
               </p>
@@ -153,7 +155,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("jobArea").value = jobToEdit.area || "";
         document.getElementById("salary").value = jobToEdit.salario || "";
         document.getElementById("expiryDate").value = jobToEdit.fechaExpiracion
-          ? new Date(job.fechaExpiracion).toLocaleDateString("es-ES", { timeZone: "UTC" })
+          ? new Date(jobToEdit.fechaExpiracion).toISOString().split("T")[0]
           : "";
       }
       if (event.target.closest("#deleteJobButton")) {
