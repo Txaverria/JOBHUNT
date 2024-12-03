@@ -208,6 +208,30 @@ document.getElementById("review-job-application").addEventListener("click", asyn
   event.preventDefault();
 
   // Collect user input
+  
+  document.getElementById("inputPhone").addEventListener("input", function (e) {
+    let input = e.target.value;
+
+    // Remove all non-numeric characters except '+'
+    input = input.replace(/[^\d+]/g, "");
+
+    // Ensure the string starts with '+506'
+    if (!input.startsWith("+506")) {
+      input = "+506" + input.replace(/^\+506/, "");
+    }
+
+    // Extract the numbers after +506
+    let numbers = input.slice(4).replace(/\D/g, "");
+
+    // Format the numbers to include a dash after 4 digits
+    if (numbers.length > 4) {
+      numbers = numbers.slice(0, 4) + "-" + numbers.slice(4, 8);
+    }
+
+    // Rebuild the final formatted value
+    e.target.value = "+506 " + numbers;
+  });
+
   const inputEmail = document.getElementById("inputEmail").value.trim();
   const inputPhone = document.getElementById("inputPhone").value.trim();
   const inputSalary = document.getElementById("inputSalary").value.trim();

@@ -1,6 +1,31 @@
 let employer = null;
 
 document.addEventListener("DOMContentLoaded", async () => {
+  const telefonoField = document.getElementById("companyPhone");
+
+  telefonoField.addEventListener("input", function (e) {
+    let input = e.target.value;
+
+    // Remove all non-numeric characters except '+'
+    input = input.replace(/[^\d+]/g, "");
+
+    // Ensure the string starts with '+506'
+    if (!input.startsWith("+506")) {
+      input = "+506" + input.replace(/^\+506/, "");
+    }
+
+    // Extract the numbers after +506
+    let numbers = input.slice(4).replace(/\D/g, "");
+
+    // Format the numbers to include a dash after 4 digits
+    if (numbers.length > 4) {
+      numbers = numbers.slice(0, 4) + "-" + numbers.slice(4, 8);
+    }
+
+    // Rebuild the final formatted value
+    e.target.value = "+506 " + numbers;
+  });
+
   const loggedUserID = sessionStorage.getItem("userID");
 
   let selectedJobID = null; // To store the ID of the job being edited
@@ -121,6 +146,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         descripcion: document.getElementById("companyDescripcion").value.trim(),
         nombre: document.getElementById("companyAdminName").value.trim(),
         email: document.getElementById("companyEmail").value.trim(),
+        telefono: document.getElementById("companyPhone").value.trim(),
         password: document.getElementById("companyPassword").value.trim(),
       };
 

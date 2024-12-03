@@ -1,4 +1,29 @@
 document.getElementById("registerButton").addEventListener("click", async () => {
+  const telefonoField = document.getElementById("telefono");
+
+  telefonoField.addEventListener("input", function (e) {
+    let input = e.target.value;
+
+    // Remove all non-numeric characters except '+'
+    input = input.replace(/[^\d+]/g, "");
+
+    // Ensure the string starts with '+506'
+    if (!input.startsWith("+506")) {
+      input = "+506" + input.replace(/^\+506/, "");
+    }
+
+    // Extract the numbers after +506
+    let numbers = input.slice(4).replace(/\D/g, "");
+
+    // Format the numbers to include a dash after 4 digits
+    if (numbers.length > 4) {
+      numbers = numbers.slice(0, 4) + "-" + numbers.slice(4, 8);
+    }
+
+    // Rebuild the final formatted value
+    e.target.value = "+506 " + numbers;
+  });
+
   try {
     // Fetch all users to check for existing emails
     const allUsers = await getAllUsers();
@@ -16,7 +41,7 @@ document.getElementById("registerButton").addEventListener("click", async () => 
       const nombreEmpresa = document.getElementById("nombreEmpresa").value.trim();
       email = document.getElementById("email").value.trim();
       const contrasena = document.getElementById("password").value.trim();
-      const telefono = document.getElementById("phone").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
       const descripcion = document.getElementById("descripcion").value.trim();
 
       // Validate inputs
