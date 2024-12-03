@@ -79,13 +79,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               <br />
               Teléfono: ${applicant.telefono || "No disponible"}
               <br />
-              Currículum: ${
-                applicant.cv
-                  ? `<a href="${applicant.cv}" target="_blank">Ver CV</a>`
-                  : "No disponible"
-              }
-              <br />
-              Preferencias laborales: ${applicant.preferencias || "No disponible"}
+              Currículum: <span style='text-decoration: underline;'>${applicant.cv}</span>
             </p>
           </div>
           <div class="col-md-2 d-flex align-items-start justify-content-end">
