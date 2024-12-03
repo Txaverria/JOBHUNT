@@ -1,6 +1,25 @@
 let loggedUserID;
 let user;
 
+const uploadButton = document.getElementById("uploadButton");
+const fileInput = document.getElementById("fileInput");
+const inputCV = document.getElementById("inputCV");
+
+// Trigger the file input click when the button is clicked
+uploadButton.addEventListener("click", () => {
+  fileInput.click();
+});
+
+// Handle file selection
+fileInput.addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const fileName = file.name; // Get the file name
+    inputCV.textContent = fileName; // Display the file name
+    inputCV.style.display = "block"; // Make the div visible
+  }
+});
+
 document.addEventListener("DOMContentLoaded", async () => {
   const jobListingContainer = document.querySelector("#job-listings");
   loggedUserID = sessionStorage.getItem("userID");
@@ -9,6 +28,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.getElementById("inputEmail").value = user.email;
   document.getElementById("inputPhone").value = user.telefono;
+
+  if (user.cv) {
+    inputCV.style.display = "block";
+    inputCV.textContent = user.cv;
+  }
 
   let allJobOffers = [];
 
@@ -72,7 +96,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>
         <div class="row">
           <div class="col-auto ms-auto text-muted">Hasta: ${
-            job.fechaExpiracion ? new Date(job.fechaExpiracion).toLocaleDateString("es-ES", { timeZone: "UTC" }) : "DD/MM/YYYY"
+            job.fechaExpiracion
+              ? new Date(job.fechaExpiracion).toLocaleDateString("es-ES", { timeZone: "UTC" })
+              : "DD/MM/YYYY"
           }</div>
         </div>
       `;
@@ -208,7 +234,7 @@ document.getElementById("review-job-application").addEventListener("click", asyn
   event.preventDefault();
 
   // Collect user input
-  
+
   document.getElementById("inputPhone").addEventListener("input", function (e) {
     let input = e.target.value;
 
@@ -235,6 +261,7 @@ document.getElementById("review-job-application").addEventListener("click", asyn
   const inputEmail = document.getElementById("inputEmail").value.trim();
   const inputPhone = document.getElementById("inputPhone").value.trim();
   const inputSalary = document.getElementById("inputSalary").value.trim();
+  const newCV = document.getElementById("inputCV").textContent.trim();
 
   // Validate input (check if any field is empty)
   if (!inputEmail || !inputPhone || !inputSalary) {
@@ -253,13 +280,14 @@ document.getElementById("review-job-application").addEventListener("click", asyn
     email: inputEmail,
     phone: inputPhone,
     salaryExpectation: inputSalary,
-    cv: "cv_placeholder.pdf", // Placeholder for CV
+    cv: newCV, // Placeholder for CV
   };
 
   // Populate the reviewModal with the applicant's data
   document.getElementById("reviewEmail").textContent = inputEmail;
   document.getElementById("reviewPhone").textContent = inputPhone;
   document.getElementById("reviewSalary").textContent = inputSalary;
+  document.getElementById("cvPreview").textContent = newCV;
 
   // Hide the current modal (contactModal)
   const contactModal = bootstrap.Modal.getInstance(document.getElementById("contactModal"));
@@ -273,7 +301,6 @@ document.getElementById("review-job-application").addEventListener("click", asyn
 // Event listener for when "Enviar Solicitud" is clicked in the reviewModal
 document.getElementById("send-job-application").addEventListener("click", async () => {
   if (!selectedJob) {
-
     return;
   }
 

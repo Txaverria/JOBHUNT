@@ -229,7 +229,10 @@
             ></button>
           </div>
           <div class="modal-body">
-            <p>Aplicación de <span class="fw-bold" id="userNamePlaceholder"></span> para <span class="fw-bold" id="jobNamePlaceholder"></span></p>
+            <p>
+              Aplicación de <span class="fw-bold" id="userNamePlaceholder"></span> para
+              <span class="fw-bold" id="jobNamePlaceholder"></span>
+            </p>
             <hr class="custom-hr" />
 
             <form id="contactForm">
@@ -264,8 +267,25 @@
               </div>
               <div class="mb-3">
                 <label class="form-label">Currículum</label>
-                <div class="border-dashed">Inserte el PDF o suéltelo aquí</div>
-                <button type="button" class="btn btn-outline-dark mt-2">Subir PDF</button>
+                <div
+                  id="inputCV"
+                  class="text-muted"
+                  style="
+                    background-color: #f8f9fa;
+                    padding: 10px;
+                    border: 1px solid #ced4da;
+                    border-radius: 5px;
+                    display: none;
+                    margin-bottom: 1em;
+                    cursor: default;
+                  "
+                >
+                  <!-- The file name will appear here -->
+                </div>
+                <button type="button" class="btn btn-outline-dark mt-2 d-block" id="uploadButton">
+                  Subir PDF
+                </button>
+                <input type="file" id="fileInput" class="d-none" accept=".pdf,.doc,.docx" />
               </div>
               <div class="d-flex justify-content-end">
                 <button type="button" class="btn btn-dark" id="review-job-application">
@@ -321,8 +341,20 @@
             <h5>Currículum</h5>
             <p>Asegúrate de incluir el currículum más actualizado.</p>
             <div class="d-flex align-items-center mt-2">
-              <span id="cvPreview" class="me-2">Currículum.pdf</span>
-              <button type="button" class="btn btn-outline-dark">Ver</button>
+              <span
+                id="cvPreview"
+                class="me-2"
+                style="
+                  background-color: #f8f9fa;
+                  padding: 10px;
+                  border: 1px solid #ced4da;
+                  border-radius: 5px;
+                  margin-bottom: 1em;
+                  cursor: default;
+                  width: 100%;
+                "
+                ></span
+              >
             </div>
             <div class="d-flex justify-content-end gap-3 mt-4">
               <button
