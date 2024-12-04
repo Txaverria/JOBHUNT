@@ -1,68 +1,53 @@
 class Usuario {
-  constructor(id, nombre, email, rol) {
-    this.id = id;
+  constructor(nombre, email, tipo, telefono, contrasena) {
     this.nombre = nombre;
     this.email = email;
-    this.rol = rol;
+    this.tipo = tipo;
+    this.telefono = telefono;
+    this.contrasena = contrasena;
   }
 
-  // Métodos comunes a todos los usuarios
   iniciarSesion() {
-    // lógica para iniciar sesión
+    console.log(`${this.nombre} ha iniciado sesión.`);
   }
 
   cerrarSesion() {
-    // lógica para cerrar sesión
-  }
-
-  actualizarPerfil(nuevosDatos) {
-    // lógica para actualizar datos del perfil
+    console.log(`${this.nombre} ha cerrado sesión.`);
   }
 }
 
 class Admin extends Usuario {
-  constructor(id, nombre, email) {
-    super(id, nombre, email, "admin");
+  constructor(nombre, email, telefono, contrasena) {
+    super(nombre, email, "admin", telefono, contrasena);
   }
 
-  gestionarUsuario(usuario) {
-    // lógica para editar o eliminar un usuario
-  }
-
-  moderarOfertaTrabajo(ofertaTrabajo) {
-    // lógica para moderar publicaciones
+  gestionarUsuarios() {
+    console.log("Gestionando usuarios...");
   }
 }
 
-class Empleador extends Usuario {
-  constructor(id, nombre, email, nombreEmpresa) {
-    super(id, nombre, email, "empleador");
-    this.nombreEmpresa = nombreEmpresa;
-    this.ofertasDeTrabajo = []; // la lista de sus trabajos publicados
+class Empresa extends Usuario {
+  constructor(nombre, email, telefono, contrasena, empresa, descripcion) {
+    super(nombre, email, "empresa", telefono, contrasena);
+    this.empresa = empresa;
+    this.descripcion = descripcion;
   }
 
-  publicarOferta(ofertaTrabajo) {
-    this.ofertasDeTrabajo.push(ofertaTrabajo);
-  }
-
-  revisarSolicitantes(ofertaTrabajo) {
-    return this.ofertasDeTrabajo;
+  publicarOferta(oferta) {
+    this.ofertasDeTrabajo.push(oferta);
+    console.log("Oferta publicada:", oferta);
   }
 }
 
 class Solicitante extends Usuario {
-  constructor(id, nombre, email, curriculum) {
-    super(id, nombre, email, "solicitante");
-    this.curriculum = curriculum; // info del CV
-    this.aplicaciones = []; // lista de aplicaciones a trabajos
+  constructor(nombre, email, telefono, contrasena, cv) {
+    super(nombre, email, "usuario", telefono, contrasena);
+    this.cv = cv;
   }
 
-  subirCurriculum(nuevoCurriculum) {
-    this.curriculum = nuevoCurriculum;
-  }
-
-  postularTrabajo(ofertaTrabajo) {
-    this.aplicaciones.push(ofertaTrabajo);
+  postularTrabajo(oferta) {
+    this.aplicaciones.push(oferta);
+    console.log(`${this.nombre} se postuló al trabajo: ${oferta.titulo}`);
   }
 }
 
@@ -70,31 +55,29 @@ class OfertaLaboral {
   constructor(
     id,
     titulo,
-    descripcion,
-    salario,
     ubicacion,
     tipo,
     modalidad,
-    fechaPublicacion,
-    fechaExpiracion
+    area,
+    salario,
+    fechaExpiracion,
+    id_empresa,
+    empresa,
+    solicitantes = []
   ) {
-    this.id = id;
     this.titulo = titulo;
-    this.descripcion = descripcion;
-    this.salario = salario;
     this.ubicacion = ubicacion;
-    this.tipo = tipo; // 'tiempo completo', 'medio tiempo', etc.
-    this.modalidad = modalidad; // 'híbrido', 'presencial'
-    this.fechaPublicacion = fechaPublicacion;
-    this.fechaExpiracion = fechaExpiracion;
-    this.solicitantes = []; // Las personas aplicando al trabajo/oferta
+    this.tipo = tipo;
+    this.modalidad = modalidad;
+    this.area = area;
+    this.salario = salario;
+    this.fechaExpiracion = new Date(fechaExpiracion);
+    this.empresa = empresa;
+    this.solicitantes = solicitantes;
   }
 
   agregarSolicitante(solicitante) {
     this.solicitantes.push(solicitante);
-  }
-
-  renovarTrabajo(nuevaFechaExpiracion) {
-    this.fechaExpiracion = nuevaFechaExpiracion;
+    console.log("Solicitante agregado:", solicitante);
   }
 }
