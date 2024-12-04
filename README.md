@@ -12,8 +12,6 @@
   <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white" alt="Mongoose" />
 </p>
 
-Este es el proyecto de programación para el curso **TWEB-09 Programación Web Orientada a Objetos** correspondiente al ciclo 2024 C3.
-
 ## Descripción del Proyecto
 
 El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecnologías de back-end y front-end basadas en principios de programación orientada a objetos (POO). La plataforma conectará a empleadores con solicitantes de empleo, permitiendo la publicación de ofertas de trabajo y la búsqueda de oportunidades laborales.
