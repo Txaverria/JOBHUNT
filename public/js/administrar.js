@@ -15,14 +15,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     const employers = allUsers.filter((user) => user.tipo === "empresa");
 
     // Render job offers
-    allJobs.forEach((job) => {
+    allJobs.forEach((job, index) => {
       const jobElement = document.createElement("div");
       jobElement.classList.add("job-listing", "mb-4");
+      const collapseId = `collapseSolicitantes${index}`; // Unique ID for each collapse
+
       jobElement.innerHTML = `
         <div class="row">
           <div class="col-md-2 d-flex align-items-center">
             <img
-              src="imagenes/job-placeholder.png"
+              src="imagenes/IMGEJEMPLO.png"
               alt="Job Picture"
               class="img-fluid"
             />
@@ -63,23 +65,37 @@ document.addEventListener("DOMContentLoaded", async () => {
             ? `
               <div class="row mt-3">
                 <div class="col-12">
-                  <p class="fw-bold">Solicitantes:</p>
-                  <ul>
-                    ${job.solicitantes
-                      .map(
-                        (applicant) => `
-                          <li>
-                            <p>
-                              <strong>Email:</strong> ${applicant.email}<br />
-                              <strong>Teléfono:</strong> ${applicant.phone}<br />
-                              <strong>Pretensión Salarial:</strong> ${applicant.salaryExpectation}<br />
-                              <strong>Currículum:</strong> <span style='text-decoration: underline;'>${applicant.cv}</span>
-                            </p>
-                          </li>
-                        `
-                      )
-                      .join("")}
-                  </ul>
+                  <button
+                    class="btn btn-secondary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#${collapseId}"
+                    aria-expanded="false"
+                    aria-controls="${collapseId}"
+                  >
+                    Ver Solicitantes (${job.solicitantes.length})
+                  </button>
+                  <div class="collapse mt-2" id="${collapseId}">
+                    <div class="">
+                      <ul>
+                        ${job.solicitantes
+                          .map(
+                            (applicant) => `
+                              <li>
+                                <p style="text-align: left; margin: 0">
+                                  <strong>Email:</strong> ${applicant.email}<br />
+                                  <strong>Teléfono:</strong> ${applicant.phone}<br />
+                                  <strong>Pretensión Salarial:</strong> ${applicant.salaryExpectation}<br />
+                                  <strong>Currículum:</strong> 
+                                  <span style='text-decoration: underline;'>${applicant.cv}</span>
+                                </p>
+                              </li>
+                            `
+                          )
+                          .join("")}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             `
@@ -97,7 +113,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         <div class="row">
           <div class="col-md-2 d-flex align-items-center">
             <img
-              src="imagenes/job-placeholder.png"
+              src="imagenes/users/usuario.png"
               alt="Applicant Picture"
               class="img-fluid"
             />
@@ -137,7 +153,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         <div class="row">
           <div class="col-md-2 d-flex align-items-center">
             <img
-              src="imagenes/job-placeholder.png"
+              src="imagenes/users/empresa.png"
               alt="Employer Picture"
               class="img-fluid"
             />
