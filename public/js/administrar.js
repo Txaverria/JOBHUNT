@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             />
           </div>
           <div class="col-md-8">
-            <p class="fw-bold job-name">${employer.nombre || "Nombre Empresa"}</p>
+            <p class="fw-bold job-name">${employer.nombre || "Nombre Empresa"} (${employer.empresa})</p>
             <p>${employer.descripcion || "Descripción no disponible"}</p>
             <p>
               <strong>Información de contacto</strong>
