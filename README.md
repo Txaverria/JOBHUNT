@@ -77,7 +77,7 @@ El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecno
 1. **Clonar el repositorio**:
 
    ```bash
-   git clone https://github.com/Txaverria/Proyecto-TWEB-09.git
+   git clone https://github.com/Txaverria/JOBHUNT.git
    cd Proyecto-TWEB-09
    ```
 
