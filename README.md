@@ -97,6 +97,7 @@ El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecno
    Ejecutar la aplicación:
 
    ```bash
+   cd api
    npm start
    ```
 
