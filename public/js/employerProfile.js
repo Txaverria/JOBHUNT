@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           <div class="row">
             <div class="col-md-2 d-flex align-items-center">
               <img
-                src="imagenes/job-placeholder.png"
+                src="imagenes/IMGEJEMPLO.png"
                 alt="Job Picture"
                 class="img-fluid"
                 id="jobImage"
