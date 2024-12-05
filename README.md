@@ -92,7 +92,7 @@ El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecno
 3. **Configuración de la base de datos**:
 
    - Crea una base de datos en **MongoDB** (puedes usar **MongoDB Atlas** para una base de datos en la nube).
-   - Actualiza las configuraciones de conexión en el archivo de configuración.
+   - Actualiza las configuraciones de conexión en el archivo de configuración: Crear el archivo .env en /api/
 
    Ejecutar la aplicación:
 
