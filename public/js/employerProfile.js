@@ -69,73 +69,93 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (employerJobs.length === 0) {
       allJobListingsContainer.innerHTML = `<p class="text-center text-muted mt-4">No tienes ofertas laborales publicadas.</p>`;
     } else {
-      employerJobs.forEach((job) => {
+      employerJobs.forEach((job, index) => {
+        const collapseId = `collapseSolicitantes${index}`; // Unique ID for each collapse
         const jobElement = document.createElement("div");
         jobElement.classList.add("job-listing", "mb-4");
 
         jobElement.innerHTML = `
-          <div class="row">
-            <div class="col-md-2 d-flex align-items-center">
-              <img
-                src="imagenes/IMGEJEMPLO.png"
-                alt="Job Picture"
-                class="img-fluid"
-                id="jobImage"
-              />
-            </div>
-            <div class="col-md-8">
-              <p class="fw-bold job-name">
-                <span id="jobTitle">${job.titulo || "Nombre Puesto"}</span>
-              </p>
-              <p>
-                <span id="companyName">${
-                  job.empresa || "Nombre Empresa"
-                }</span> (<span id="employmentType"
-                  >${job.tipo || "Tipo de Empleo"}</span
-                >)
-                <br />
-                <span id="jobLocation">${
-                  job.ubicacion || "Ubicación"
-                }</span> (<span id="jobModality">${job.modalidad || "Modalidad"}</span>)
-                <br />
-                <span id="jobArea">${
-                  job.area || "Área de Interés"
-                }</span> (Expectativa salarial: <span id="jobSalary"
-                  >${job.salario || "Pretensión Salarial"}</span
-                >)
-              </p>
-            </div>
-
-            <div class="col-md-2 d-flex align-items-start justify-content-end">
-              <button
-                class="icon-button me-3"
-                data-bs-toggle="modal"
-                data-bs-target="#editJobListing"
-                id="editJobButton"
-                data-job-id="${job._id}"
-              >
-                <i class="bi bi-pencil-square"></i>
-              </button>
-              <button
-                class="icon-button delete-icon"
-                data-bs-toggle="modal"
-                data-bs-target="#deleteJobListing"
-                id="deleteJobButton"
-                data-job-id="${job._id}"
-              >
-                <i class="bi bi-x-lg"></i>
-              </button>
-            </div>
+        <div class="row">
+          <div class="col-md-2 d-flex align-items-center">
+            <img
+              src="imagenes/IMGEJEMPLO.png"
+              alt="Job Picture"
+              class="img-fluid rounded"
+            />
           </div>
-          <div class="row">
-            <div class="col-auto ms-auto">Hasta: <span id="jobExpiration">${
+          <div class="col-md-8">
+            <p class="fw-bold job-name">${job.titulo || "Nombre Puesto"}</p>
+            <p>
+              ${job.empresa || "Nombre Empresa"} (${job.tipo || "Tiempo de Empleo"})
+              <br />
+              ${job.ubicacion || "Ubicación"} (${job.modalidad || "Modalidad"})
+              <br />
+              ${job.area || "Área de Interés"} (${job.salario || "Pretensión Salarial"})
+            </p>
+          </div>
+          <div class="col-md-2 d-flex align-items-start justify-content-end">
+            <button
+              class="icon-button delete-icon"
+              data-bs-toggle="modal"
+              data-bs-target="#deleteConfirmationModal"
+              data-item-id="${job._id}"
+              data-item-type="job"
+            >
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-auto ms-auto">
+            Hasta: ${
               job.fechaExpiracion
                 ? new Date(job.fechaExpiracion).toLocaleDateString("es-ES", { timeZone: "UTC" })
                 : "DD/MM/YYYY"
-            }</span></div>
+            }
           </div>
-        `;
-
+        </div>
+        ${
+          job.solicitantes && job.solicitantes.length > 0
+            ? `
+              <div class="row mt-3">
+                <div class="col-12">
+                  <button
+                    class="btn btn-secondary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#${collapseId}"
+                    aria-expanded="false"
+                    aria-controls="${collapseId}"
+                  >
+                    Ver Solicitantes (${job.solicitantes.length})
+                  </button>
+                  <div class="collapse mt-2" id="${collapseId}">
+                    <div class="">
+                      <ul>
+                        ${job.solicitantes
+                          .map(
+                            (applicant) => `
+                              <li>
+                                <p style="text-align: left; margin: 0">
+                                  <strong>Email:</strong> ${applicant.email}<br />
+                                  <strong>Teléfono:</strong> ${applicant.phone}<br />
+                                  <strong>Pretensión Salarial:</strong> ${applicant.salaryExpectation}<br />
+                                  <strong>Currículum:</strong> 
+                                  <span style='text-decoration: underline;'>${applicant.cv}</span>
+                                </p>
+                              </li>
+                            `
+                          )
+                          .join("")}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `
+            : ""
+        }
+      `;
         allJobListingsContainer.appendChild(jobElement);
       });
     }

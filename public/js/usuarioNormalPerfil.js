@@ -103,12 +103,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       jobElement.innerHTML = `
         <div class="row">
           <div class="col-md-2 d-flex align-items-center">
-            <img src="imagenes/job-placeholder.png" alt="Job Picture" class="img-fluid" />
+            <img src="imagenes/IMGEJEMPLO.png" alt="Job Picture" class="img-fluid" />
           </div>
           <div class="col-md-8">
             <p class="fw-bold job-name">${job.titulo || "Nombre Puesto"}</p>
             <p>
-              ${job.company || "Nombre Empresa"} (${job.tipo || "Tiempo de Empleo"})
+              ${job.empresa || "Nombre Empresa"} (${job.tipo || "Tiempo de Empleo"})
               <br />
               ${job.ubicacion || "Ubicación"} (${job.modalidad || "Modalidad"})
               <br />

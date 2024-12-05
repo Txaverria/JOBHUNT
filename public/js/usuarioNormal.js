@@ -75,13 +75,13 @@ document.addEventListener("DOMContentLoaded", async () => {
           <div class="col-md-2 d-flex align-items-center">
             <img
               src="imagenes/IMGEJEMPLO.png"
-              alt="${job.company || "Empresa"}"
+              alt="${job.empresa || "Empresa"}"
               style="width: 150px; height: 150px; object-fit: cover"
             />
           </div>
           <div class="col-md-8" style="margin-left: 75px">
             <p class="fw-bold job-name">${job.titulo || "Nombre Puesto"}</p>
-            <p class="m-0">${job.company || "Nombre Empresa"} (${job.tipo || "Tipo de Empleo"})</p>
+            <p class="m-0">${job.empresa || "Nombre Empresa"} (${job.tipo || "Tipo de Empleo"})</p>
             <p class="m-0">${job.ubicacion || "Ubicación"} (${job.modalidad || "Modalidad"})</p>
             <p class="">${job.area || "Área de Interés"} (${
         job.salario || "Pretensión Salarial"

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <img
               src="imagenes/IMGEJEMPLO.png"
               alt="Job Picture"
-              class="img-fluid"
+              class="img-fluid rounded"
             />
           </div>
           <div class="col-md-8">
@@ -85,9 +85,13 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 <p style="text-align: left; margin: 0">
                                   <strong>Email:</strong> ${applicant.email}<br />
                                   <strong>Teléfono:</strong> ${applicant.phone}<br />
-                                  <strong>Pretensión Salarial:</strong> ${applicant.salaryExpectation}<br />
+                                  <strong>Pretensión Salarial:</strong> ${
+                                    applicant.salaryExpectation
+                                  }<br />
                                   <strong>Currículum:</strong> 
-                                  <span style='text-decoration: underline;'>${applicant.cv}</span>
+                                  <span style='text-decoration: underline;'>${
+                                    applicant.cv ? applicant.cv : "No hay CV en el sistema."
+                                  }</span>
                                 </p>
                               </li>
                             `
@@ -159,7 +163,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             />
           </div>
           <div class="col-md-8">
-            <p class="fw-bold job-name">${employer.nombre || "Nombre Empresa"} (${employer.empresa})</p>
+            <p class="fw-bold job-name">${employer.nombre || "Nombre Empresa"} (${
+        employer.empresa
+      })</p>
             <p>${employer.descripcion || "Descripción no disponible"}</p>
             <p>
               <strong>Información de contacto</strong>
