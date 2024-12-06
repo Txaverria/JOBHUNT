@@ -1,16 +1,44 @@
 # JOBHUNT
 
 <p align="left">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-  <br>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
-  <img src="https://img.shields.io/badge/MongoDB%20Atlas-4DB33D?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Atlas" />
-  <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white" alt="Mongoose" />
-</p>
+      <img
+        src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+        alt="HTML5"
+      />
+      <img
+        src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+        alt="CSS3"
+      />
+      <img
+        src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
+        alt="JavaScript"
+      />
+      <br />
+      <img
+        src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+        alt="Node.js"
+      />
+      <img
+        src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"
+        alt="Express.js"
+      />
+      <img
+        src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"
+        alt="MongoDB"
+      />
+      <img
+        src="https://img.shields.io/badge/MongoDB%20Atlas-4DB33D?style=for-the-badge&logo=mongodb&logoColor=white"
+        alt="MongoDB Atlas"
+      />
+      <img
+        src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white"
+        alt="Mongoose"
+      />
+      <img
+        src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white"
+        alt="Redis"
+      />
+    </p>
 
 ## Descripción del Proyecto
 
@@ -54,9 +82,9 @@ El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecno
   - Administración de usuarios y publicaciones.
   - Moderación de ofertas de trabajo.
 
-- **Notificaciones y Alertas** (Deseable):
-  - Alertas para solicitantes sobre nuevas ofertas de trabajo.
-  - Notificaciones para empleadores sobre nuevas solicitudes.
+- **Optimización con Redis:**
+  - Cacheo de datos frecuentes como usuarios y ofertas de trabajo.
+  - Mejora significativa del rendimiento en búsquedas y consultas repetitivas.
 
 ## Tecnologías Utilizadas
 
@@ -71,6 +99,7 @@ El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecno
   - Express.js
   - MongoDB
   - Mongoose
+  - Redis (caching)
 
 ## Instrucciones de Instalación
 
@@ -92,20 +121,42 @@ El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecno
 3. **Configuración de la base de datos**:
 
    - Crea una base de datos en **MongoDB** (puedes usar **MongoDB Atlas** para una base de datos en la nube).
-   - Actualiza las configuraciones de conexión en el archivo de configuración: Crear el archivo .env en /api/
+   - Configura la URI de conexión en un archivo .env ubicado en /api/:
 
-   Ejecutar la aplicación:
-
-   ```bash
-   cd api
-   npm start
+   ```env
+   MONGO_URI=tu_cadena_de_conexion_mongodb
    ```
 
-4. **Acceder a la aplicación**:
+4. **Configurar Redis:**
 
-   Abre tu navegador y ve a http://localhost:3000 (o el puerto que hayas configurado).
+  - Instala Redis en tu máquina local o usa un servidor Redis en la nube.
+  - Asegúrate de que Redis esté corriendo. Si estás usando WSL:
 
-5. **Uso**:
+  ```bash
+   redis-server
+   ```
+
+  - Opcionalmente, configura el host y puerto en el archivo .env:
+
+  ```env
+  REDIS_HOST=127.0.0.1
+  REDIS_PORT=6379
+  ```
+
+5. **Ejecutar la aplicación:**:
+
+  Abre tu navegador y ve a http://localhost:3000 (o el puerto que hayas configurado).
+
+  ```bash
+  cd api
+  npm start
+  ```
+
+6. **Acceder a la aplicación:**
+
+  Abre tu navegador y ve a http://localhost:3000 (o el puerto que hayas configurado).
+
+7. **Uso**:
 
    Este proyecto ofrece las siguientes funcionalidades:
 
