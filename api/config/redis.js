@@ -2,7 +2,7 @@ const redis = require("redis");
 const client = redis.createClient({
   socket: {
     host: "localhost", // Assuming Redis runs on localhost in WSL
-    port: 6379, // Default Redis port
+    port: 6380, // Default Redis port
   },
 });
 
