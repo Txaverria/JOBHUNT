@@ -19,6 +19,10 @@
         alt="Node.js"
       />
       <img
+        src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white"
+        alt="Redis"
+      />
+      <img
         src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"
         alt="Express.js"
       />
@@ -33,10 +37,6 @@
       <img
         src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white"
         alt="Mongoose"
-      />
-      <img
-        src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white"
-        alt="Redis"
       />
     </p>
 
@@ -129,32 +129,32 @@ El proyecto tiene como objetivo desarrollar una aplicación web utilizando tecno
 
 4. **Configurar Redis:**
 
-  - Instala Redis en tu máquina local o usa un servidor Redis en la nube.
-  - Asegúrate de que Redis esté corriendo. Si estás usando WSL:
+- Instala Redis en tu máquina local o usa un servidor Redis en la nube.
+- Asegúrate de que Redis esté corriendo. Si estás usando WSL:
 
-  ```bash
-   redis-server
-   ```
+```bash
+ redis-server
+```
 
-  - Opcionalmente, configura el host y puerto en el archivo .env:
+- Opcionalmente, configura el host y puerto en el archivo .env:
 
-  ```env
-  REDIS_HOST=127.0.0.1
-  REDIS_PORT=6379
-  ```
+```env
+REDIS_HOST=127.0.0.1
+REDIS_PORT=6379
+```
 
 5. **Ejecutar la aplicación:**:
 
-  Abre tu navegador y ve a http://localhost:3000 (o el puerto que hayas configurado).
+Abre tu navegador y ve a http://localhost:3000 (o el puerto que hayas configurado).
 
-  ```bash
-  cd api
-  npm start
-  ```
+```bash
+cd api
+npm start
+```
 
 6. **Acceder a la aplicación:**
 
-  Abre tu navegador y ve a http://localhost:3000 (o el puerto que hayas configurado).
+Abre tu navegador y ve a http://localhost:3000 (o el puerto que hayas configurado).
 
 7. **Uso**:
 
